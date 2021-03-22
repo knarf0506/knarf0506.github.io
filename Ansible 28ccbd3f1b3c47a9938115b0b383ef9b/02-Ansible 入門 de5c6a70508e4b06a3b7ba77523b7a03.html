@@ -1,0 +1,807 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>02-Ansible 入門</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="de5c6a70-508e-4b06-a3b7-ba77523b7a03" class="page sans"><header><h1 class="page-title">02-Ansible 入門</h1></header><div class="page-body"><h1 id="77ce978e-be89-4838-b63e-9e1dd85c3915" class="">2.1 安裝 Ansible</h1><p id="b6d97edb-e01b-42ad-a476-4881668d5871" class="">　　在本文中以 <strong>CentOS 7</strong> 為例，安裝<mark class="highlight-blue">管理主機</mark>及<mark class="highlight-blue">遠端主機</mark>。</p><h2 id="3723478c-6d56-43d4-8dc4-cf95f987911a" class="">2.1.1 管理主機</h2><h3 id="354897bf-35f0-4da6-843b-07c6bb638fe1" class="">1. 安裝 Ansible</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="12491ba6-6ae9-466f-8ceb-bcb335ff8d66" class="code"><code><span class="token function">sudo</span> yum <span class="token function">install</span> epel-release
+<span class="token function">sudo</span> yum <span class="token function">install</span> ansible</code></pre><h3 id="a14bbd52-f962-47b5-877f-96e930be429e" class="">2. 設定 Ansible 管理主機和遠端主機連接</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="265513a1-8854-412a-b547-3b753faea1ed" class="code"><code><span class="token comment"># 產生 SSH 金鑰</span>
+ssh-keygen
+
+<span class="token comment"># 檢查 SSH 公鑰(id_rsa.pub) 及私鑰(id_rsa)</span>
+<span class="token builtin class-name">cd</span> .ssh/
+ll
+
+<span class="token comment"># 複製管理主機的 SSH 金鑰到遠端主機，這樣管理主機之後透過 SSH 連線至遠端主機就不需要密碼</span>
+ssh-copy-id -i ./id_rsa.pub remoteserver</code></pre><p id="e85ec732-13dd-4353-a220-4cd3845c2b45" class="">　　驗證 <strong>SSH </strong>設定：在管理主機執行 <strong>SSH </strong>指令，若不需要密碼即代表設定成功。</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="7503c5d8-3cd1-4531-aa2d-777f54ac94f4" class="code"><code><span class="token function">ssh</span> remoteuser@remoteserver</code></pre><h2 id="e4a3dda0-8abd-49d4-b535-b67981427ed1" class="">2.1.2 遠端主機</h2><p id="fa41daaf-5026-48b5-b8fe-7a60327e37e3" class="">　　<strong>CentOS 7</strong> 需要確保啟動 <strong>SSH </strong>服務，並且安裝 <strong>Python </strong>版本 2.4 以上。</p><h1 id="e9fc60ce-901e-490e-b0da-9e0756ce32d0" class="">2.2 管理主機設定</h1><p id="84b96e58-93ae-4ce4-82eb-0a361fe63366" class="">　　在上述中，管理主機透過 <strong>SSH </strong>服務可以直接連線至遠端主機，<mark class="highlight-red">但並不代表管理主機已經可以部署遠端主機</mark>。因此在管理主機上需要設定<mark class="highlight-blue">主機目錄</mark>設定檔。</p><h2 id="c1d73d7a-c4f1-4a0e-af5c-daac048d7264" class="">2.2.1 預設設定檔</h2><p id="7467b98a-de41-40b6-9c24-7256669297a8" class="">　　在 Ansible 中，預設的 config file 在：<span style="border-bottom:0.05em solid">/etc/ansible/ansible.cfg</span>。</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="3356d385-be21-485c-b630-4afd8c2e7c90" class="code"><code>ansible --version</code></pre><p id="3f293f9a-0377-4ec4-90a1-4205400c7de9" class="">
+</p><p id="fcd08e84-a608-47d3-80c8-300ecdd106a8" class="">　　Return：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="36e6f97e-5b9b-4a25-89f1-f9dc360ecba1" class="code"><code>ansible <span class="token number">2.9</span>.18
+  config <span class="token function">file</span> <span class="token operator">=</span> /etc/ansible/ansible.cfg
+  configured module search path <span class="token operator">=</span> <span class="token punctuation">[</span>u<span class="token string">'/root/.ansible/plugins/modules'</span>, u<span class="token string">'/usr/share/ansible/plugins/modules'</span><span class="token punctuation">]</span>
+  ansible python module location <span class="token operator">=</span> /usr/lib/python2.7/site-packages/ansible
+  executable location <span class="token operator">=</span> /usr/bin/ansible
+  python version <span class="token operator">=</span> <span class="token number">2.7</span>.5 <span class="token punctuation">(</span>default, Nov <span class="token number">16</span> <span class="token number">2020</span>, <span class="token number">22</span>:23:17<span class="token punctuation">)</span> <span class="token punctuation">[</span>GCC <span class="token number">4.8</span>.5 <span class="token number">20150623</span> <span class="token punctuation">(</span>Red Hat <span class="token number">4.8</span>.5-44<span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre><h3 id="8eea0a17-d9f3-4443-904f-1a6c282fe847" class="">1. ansible.cfg</h3><p id="ce8d6c6d-95f3-46c3-aee6-3521a1827df4" class="">　　打開：<span style="border-bottom:0.05em solid">/etc/ansible/ansible.cfg</span>，在最上方可以看到 <strong>inventory</strong>，代表主機清單，是用來告訴 Ansible 需要管理哪些遠端主機。其主機清單預設路徑在：<span style="border-bottom:0.05em solid">/etc/ansible/hosts</span>。</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="c5058697-ed38-4ca6-8e3d-e44f5e188151" class="code"><code><span class="token comment"># config file for ansible -- https://ansible.com/</span>
+<span class="token comment"># ===============================================</span>
+
+<span class="token comment"># nearly all parameters can be overridden in ansible-playbook</span>
+<span class="token comment"># or with command line flags. ansible will read ANSIBLE_CONFIG,</span>
+<span class="token comment"># ansible.cfg in the current working directory, .ansible.cfg in</span>
+<span class="token comment"># the home directory or /etc/ansible/ansible.cfg, whichever it</span>
+<span class="token comment"># finds first</span>
+
+<span class="token punctuation">[</span>defaults<span class="token punctuation">]</span>
+
+<span class="token comment"># some basic default values...</span>
+
+<span class="token comment">#inventory      = /etc/ansible/hosts          # 主機清單</span>
+<span class="token comment">#library        = /usr/share/my_modules/      # ansible 預設搜尋模組位置</span>
+<span class="token comment">#module_utils   = /usr/share/my_module_utils/</span>
+<span class="token comment">#remote_tmp     = ~/.ansible/tmp              # 複製一份 python script 放在 remote_tmp，被控制的節點都會執行這份腳本，執行完之後會刪除，並返回回傳結果</span>
+<span class="token comment">#local_tmp      = ~/.ansible/tmp              # 假設使用 ping 模組，會轉換成 python script 放在 local_tmp 的位置</span>
+<span class="token comment">#plugin_filters_cfg = /etc/ansible/plugin_filters.yml</span>
+<span class="token comment">#forks          = 5                           # 同時對 5 台遠端主機並行執行命令，直到都回傳後再傳下 5 台</span>
+<span class="token comment">#poll_interval  = 15</span>
+<span class="token comment">#sudo_user      = root</span>
+<span class="token comment">#ask_sudo_pass = True                         # playbook 預設為 False</span>
+<span class="token comment">#ask_pass      = True                         # 詢問是否提供密碼</span>
+<span class="token comment">#transport      = smart</span>
+<span class="token comment">#remote_port    = 22                          # 遠端 port</span>
+<span class="token comment">#module_lang    = C</span>
+<span class="token comment">#module_set_locale = False</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment"># uncomment this to disable SSH key host checking</span>
+<span class="token comment">#host_key_checking =:: False                    # 連線遠端主機時，檢查對方的公鑰有沒有在我們的 .ssh 的已知清單裡面，如果從來沒有連線過，則會跳出訊息，假設有 N 台則會有 N 條訊息</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment"># logging is off by default unless this path is defined</span>
+<span class="token comment"># if so defined, consider logrotate</span>
+<span class="token comment">#log_path = /var/log/ansible.log                # 在 ansible 裡面，預設 log 是不保存的，如果需要保存 log，加入 ansible.cfg</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment">#.</span>
+<span class="token comment"># if set, always use this private key file for authentication, same as</span>
+<span class="token comment"># if passing --private-key to ansible or ansible-playbook</span>
+<span class="token comment">#private_key_file = /path/to/file               # 配置私鑰的路徑</span></code></pre><h3 id="e6924a8f-8f2e-4861-b085-15fa36581d51" class="">2. hosts</h3><p id="3d1eab0f-f813-480c-bd14-70ebf004cfb2" class="">　　打開：<span style="border-bottom:0.05em solid">/etc/ansible/hosts</span>，可以看到範例：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="85b58375-f169-4fa8-a39c-f6bb45197f66" class="code"><code><span class="token comment"># This is the default ansible 'hosts' file.</span>
+<span class="token comment">#</span>
+<span class="token comment"># It should live in /etc/ansible/hosts</span>
+<span class="token comment">#</span>
+<span class="token comment">#   - Comments begin with the '#' character</span>
+<span class="token comment">#   - Blank lines are ignored</span>
+<span class="token comment">#   - Groups of hosts are delimited by [header] elements</span>
+<span class="token comment">#   - You can enter hostnames or ip addresses</span>
+<span class="token comment">#   - A hostname/ip can be a member of multiple groups</span>
+
+<span class="token comment"># Ex 1: Ungrouped hosts, specify before any group headers.</span>
+
+<span class="token comment">## green.example.com</span>
+<span class="token comment">## blue.example.com</span>
+<span class="token comment">## 192.168.100.1</span>
+<span class="token comment">## 192.168.100.10</span>
+
+<span class="token comment"># Ex 2: A collection of hosts belonging to the 'webservers' group</span>
+
+<span class="token comment">## [webservers]</span>
+<span class="token comment">## alpha.example.org</span>
+<span class="token comment">## beta.example.org</span>
+<span class="token comment">## 192.168.1.100</span>
+<span class="token comment">## 192.168.1.110</span>
+
+<span class="token comment"># If you have multiple hosts following a pattern you can specify</span>
+<span class="token comment"># them like this:</span>
+
+<span class="token comment">## www[001:006].example.com</span>
+
+<span class="token comment"># Ex 3: A collection of database servers in the 'dbservers' group</span>
+
+<span class="token comment">## [dbservers]</span>
+<span class="token comment">##</span>
+<span class="token comment">## db01.intranet.mydomain.net</span>
+<span class="token comment">## db02.intranet.mydomain.net</span>
+<span class="token comment">## 10.25.1.56</span>
+<span class="token comment">## 10.25.1.57</span>
+
+<span class="token comment"># Here's another example of host ranges, this time there are no</span>
+<span class="token comment"># leading 0s:</span>
+
+<span class="token comment">## db-[99:101]-node.example.com</span></code></pre><h2 id="a90efcc6-f9f9-47ba-911b-99cec2c0e938" class="">2.2.2 撰寫設定檔</h2><p id="8ca3a17d-65cb-4cb8-994c-0e925fa122f5" class="">　　如果需要自己撰寫設定檔，則目錄下需要包含 ansible.cfg 及 hosts。</p><ul id="68da70be-1265-47d7-88be-938420a116a9" class="bulleted-list"><li>Lesson1<ul id="49a3bb1a-ca9a-4ad4-8e38-6721d5e5bece" class="bulleted-list"><li>ansible.cfg</li></ul><ul id="36711e6e-2782-4047-b196-163f39209ab2" class="bulleted-list"><li>hosts</li></ul></li></ul><h3 id="7e5acc94-39d2-444f-aa3c-73403565ac97" class="">1. ansible.cfg</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="5b568c10-ddfa-4273-abf1-0b7c562e8893" class="code"><code><span class="token punctuation">[</span>defaults<span class="token punctuation">]</span>
+
+inventory <span class="token operator">=</span> ./hosts <span class="token comment"># 預設路徑是 /etc/ansible/hosts</span>
+host_key_checking <span class="token operator">=</span> False <span class="token comment"># 多次連線情況下可能會報錯</span>
+private_key_file <span class="token operator">=</span> /root/.ssh/id_rsa <span class="token comment"># 設定私鑰</span>
+log_path <span class="token operator">=</span> ./log/ansible.log <span class="token comment"># 執行 ansible 指令時儲存 log 至此檔案</span></code></pre><h3 id="5c88a6d4-8cf2-482c-b628-93cd0760be9d" class="">2. hosts</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="bdf2c63a-a177-4fe2-b8a0-2abc03d6fa3e" class="code"><code><span class="token punctuation">[</span>node<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.212
+<span class="token number">10.8</span>.21.213</code></pre><p id="c2bb0cd9-3639-40ba-95eb-e0d22a640e23" class="">
+</p><p id="b4e93097-b5f1-4136-97db-0040b1ca33de" class="">　　在 Lesson1 路徑下，執行以下指令：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="cc737dcd-6e20-4be6-a216-c10db2f1785b" class="code"><code>ansible all -m <span class="token function">ping</span> <span class="token comment"># 對所有 hosts 的 group 執行 ping 模組</span></code></pre><p id="c54bfc5a-d222-48a3-82c8-4087ae314dde" class="">
+</p><p id="8efd08ca-ce7a-4fa0-ab90-4a266e5f28db" class="">　　Return：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="fd5ed892-b62a-40ba-b560-5a4504d80427" class="code"><code><span class="token number">10.8</span>.21.212 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span>
+<span class="token number">10.8</span>.21.213 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span></code></pre><p id="378a4da4-cb36-4535-92c2-c9d59b9ff052" class="">
+</p><p id="7f41e9e8-efff-4407-b7db-4060c21f36d1" class="">　　在 Lesson1 路徑下，執行以下指令也可達到相同結果：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="844dae55-d965-4979-bce6-e9667e981e17" class="code"><code>ansible node -m <span class="token function">ping</span> <span class="token comment"># 對 hosts 的 group node 執行 ping 模組</span></code></pre><p id="a95a3c5e-5941-4d50-9c0f-4fb014407064" class="">
+</p><p id="9716b2a6-f591-48cb-a398-6e0034ae6520" class="">　　Return：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="e0c43d70-168a-4988-bb86-305efd93e470" class="code"><code><span class="token number">10.8</span>.21.212 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span>
+<span class="token number">10.8</span>.21.213 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span></code></pre><p id="a440ed0a-ba5f-4925-afde-30810f8845d2" class="">
+</p><p id="faa8f59c-19a8-49f9-8260-29931c3e2179" class="">　　hosts 也可修改為：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="253ef19e-d633-4fa0-8b8e-ff9d9340eac6" class="code"><code><span class="token punctuation">[</span>node<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.21<span class="token punctuation">[</span><span class="token number">2</span>:3<span class="token punctuation">]</span> <span class="token comment"># 類似正則表達式的寫法，程式會執行 10.8.21.212, 10.8.21.213</span></code></pre><p id="89fb4dcf-3e6b-4bb6-a092-aa6af9e40040" class="">
+</p><p id="e918015b-c67b-4617-a41f-91a6a7737f48" class="">　　如果要修改連接埠，可以在 host 後面加上冒號及連接埠：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="39c0ac6e-080b-4633-9701-2373a76d3047" class="code"><code><span class="token punctuation">[</span>node<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.212:5000
+<span class="token number">10.8</span>.21.213</code></pre><p id="639b6921-dd13-4906-b3b3-bfd8d91ebbae" class="">
+</p><p id="e2e1955c-f9bb-4365-8f4e-3d8399e30358" class="">　　如果對 2 個 host 做分組：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="179b2565-50df-4afd-8d92-00694b7aebdf" class="code"><code><span class="token punctuation">[</span>node1<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.212
+
+<span class="token punctuation">[</span>node2<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.213</code></pre><p id="3e7d6809-b42f-4164-a8d0-0a4dc9051ce7" class="">　　執行以下指令只會回傳 group 為 node1 的結果：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="86f75f83-de3f-4f6f-93ca-d7df330556fc" class="code"><code>ansible node1 -m <span class="token function">ping</span> <span class="token comment"># 對 hosts 的 group node1 執行 ping 模組</span></code></pre><p id="dd069ead-91d7-4d5b-a0cf-0e9433fbb95d" class="">
+</p><p id="aaa3a535-58c4-4ff5-8fbf-b09d40fabf24" class="">　　對 hosts 創造另一個 group，而這個 group 可以是<mark class="highlight-blue">另一個 group 的子成員</mark>。</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="62800440-5c76-4fa8-9f5d-250f21a8ac30" class="code"><code><span class="token punctuation">[</span>node1<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.212
+
+<span class="token punctuation">[</span>node2<span class="token punctuation">]</span>
+
+<span class="token number">10.8</span>.21.213
+
+<span class="token punctuation">[</span>node:children<span class="token punctuation">]</span>
+
+node1
+node2</code></pre><p id="0ed20a8b-3d9c-441a-b227-5a3718db2f65" class="">　　執行以下指令：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="b93010de-5e81-4696-89a4-2d07cc6d4166" class="code"><code>ansible node -m <span class="token function">ping</span></code></pre><p id="d3e68896-d310-413d-b288-1bb807ad8609" class="">
+</p><p id="81340a46-14b3-45fb-acdf-0ef4728331fc" class="">　　Return：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="1ece6e12-1832-4f6f-b4c9-e8a71c274192" class="code"><code><span class="token number">10.8</span>.21.212 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span>
+<span class="token number">10.8</span>.21.213 <span class="token operator">|</span> SUCCESS <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token string">"ansible_facts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"discovered_interpreter_python"</span><span class="token builtin class-name">:</span> <span class="token string">"/usr/bin/python"</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">"changed"</span><span class="token builtin class-name">:</span> false,
+    <span class="token string">"ping"</span><span class="token builtin class-name">:</span> <span class="token string">"pong"</span>
+<span class="token punctuation">}</span></code></pre><p id="9c938c74-9a46-4e56-aa29-491bbef63b2d" class="">
+</p></div></article></body></html>
