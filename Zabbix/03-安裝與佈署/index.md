@@ -23,7 +23,7 @@
 &emsp;&emsp;**2. 硬碟空間要求**
 &emsp;&emsp;Zabbix-Server 所需的硬碟空間取決於監控數據的更新頻率、每次更新頻率的數據大小、監控數存儲歷史週期、監控數據刪除策略以及資料庫本身日誌大小等。衡量資料庫寫入的一個關鍵指標是 NVPS (New Values Per Second)。
 
-![](./images/1.PNG)
+![](/images/1.PNG)
 
 
 &emsp;&emsp;&emsp;&emsp;(1) 歷史數據所需空間大小
