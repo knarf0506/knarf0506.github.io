@@ -23,7 +23,7 @@
 &emsp;&emsp;**2. 硬碟空間要求**
 &emsp;&emsp;Zabbix-Server 所需的硬碟空間取決於監控數據的更新頻率、每次更新頻率的數據大小、監控數存儲歷史週期、監控數據刪除策略以及資料庫本身日誌大小等。衡量資料庫寫入的一個關鍵指標是 NVPS (New Values Per Second)。
 
-![](./images/1.png)
+![](./images/1.PNG)
 
 
 &emsp;&emsp;&emsp;&emsp;(1) 歷史數據所需空間大小
@@ -292,27 +292,27 @@ systemctl restart httpd
 
 &emsp;&emsp;連線至: http://server_ip_or_name/zabbix。
 
-![](/images/2.png)
+![](/images/2.PNG)
 
 &emsp;&emsp;PHP 檢查預安裝套件。
 
-![](/images/3.png)
+![](/images/3.PNG)
 
 &emsp;&emsp;配置資料庫的各項參數，如果資料庫不在本地端，而是在其他台伺服器上，連線之前請確保 MySQL port 有打開，才可以連線。
 
-![](/images/4.png)
+![](/images/4.PNG)
 
 &emsp;&emsp;**注意**，如果 Zabbix-Server 在其他台機器中，這裡的 Host 則需要修改為 Zabbix-Server 的 IP，並確保 port 有打開，從前端 PHP 連到 Zabbix-Server 端口為 10051。
 
-![](/images/5.png)
+![](/images/5.PNG)
 
 &emsp;&emsp;配置完整訊息會被寫入 /etc/zabbix/conf/zabbix.conf.php 文件中。
 
-![](/images/6.png)
+![](/images/6.PNG)
 
 &emsp;&emsp;配置成功。
 
-![](/images/7.png)
+![](/images/7.PNG)
 
 &emsp;&emsp;Zabbix-Web 連接資料庫和 Zabbix-Server 端口的配置訊息如下。
 
@@ -368,11 +368,11 @@ $IMAGE_FORMAT_DEFAULT   = IMAGE_FORMAT_PNG;
 
 &emsp;&emsp;登入頁面，默認帳戶是 Admin，密碼為 zabbix。
 
-![](/images/8.png)
+![](/images/8.PNG)
 
 &emsp;&emsp;登入後頁面。
 
-![](/images/9.png)
+![](/images/9.PNG)
 
 &emsp;&emsp;(1) /etc/zabbix/zabbix_server.conf 中的參數。
 
@@ -385,21 +385,21 @@ DBPassword=password # 資料庫密碼
 
 &emsp;&emsp;Zabbix 可在 Administration => Users => User name => Languages 修改語言。
 
-![](/images/10.png)
+![](/images/10.PNG)
 
 &emsp;&emsp;開啟告警提示訊息和前端消息的聲音提示。
 
-![](/images/11.png)
+![](/images/11.PNG)
 
 &emsp;&emsp;禁用 Guests 組，防止非授權登入用戶訪問。
 
-![](/images/12.png)
+![](/images/12.PNG)
 
 ### 3.2.6 相關故障處理
 
 &emsp;&emsp;**第一種情況**：在其他參數 (iptables、SELinux) 配置正確情況下，如果 Web 介面提示 Zabbix-Server 無法連接成功的訊息，則進入 Zabbix-Server 系統透過 Telnet 測試。
 
-![](/images/13.png)
+![](/images/13.PNG)
 
 &emsp;&emsp;假設 10.0.0.1 10051 端口是不通的，可以編輯檔案 /etc/zabbix/web/zabbix.conf.php，修改 $DB['SERVER']。
 
@@ -1055,7 +1055,7 @@ MariaDB [zabbix]> select table_name, (data_length+index_length)/1024/1024 as tot
 
 &emsp;&emsp;如果採用了表分區，對於過期數據就不需要透過 Housekeeper 來執行清除。可以在 Web 中，找到 Administration => General => Housekeeper，去除 History 和 trends 的勾選狀態。
 
-![](/images/14.png)
+![](/images/14.PNG)
 
 ### 3.9.2 MySQL 表分區實作
 
