@@ -1,0 +1,1497 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E5%AE%89%E8%A3%9D%E8%88%87%E4%BD%88%E7%BD%B2">&#x5B89;&#x88DD;&#x8207;&#x4F48;&#x7F72;</h1>
+
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%9D%E8%88%87%E4%BD%88%E7%BD%B2">&#x5B89;&#x88DD;&#x8207;&#x4F48;&#x7F72;</a>
+<ul>
+<li><a href="#31-%E5%AE%89%E8%A3%9D%E7%92%B0%E5%A2%83%E6%A6%82%E8%BF%B0">3.1 &#x5B89;&#x88DD;&#x74B0;&#x5883;&#x6982;&#x8FF0;</a>
+<ul>
+<li><a href="#311-%E7%A1%AC%E9%AB%94%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.1 &#x786C;&#x9AD4;&#x74B0;&#x5883;&#x9700;&#x6C42;</a></li>
+<li><a href="#312-%E8%BB%9F%E9%AB%94%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.2 &#x8EDF;&#x9AD4;&#x74B0;&#x5883;&#x9700;&#x6C42;</a></li>
+<li><a href="#313-%E7%B6%B2%E8%B7%AF%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.3 &#x7DB2;&#x8DEF;&#x74B0;&#x5883;&#x9700;&#x6C42;</a></li>
+</ul>
+</li>
+<li><a href="#32-zabbix-server-%E5%AE%89%E8%A3%9D">3.2 Zabbix-Server &#x5B89;&#x88DD;</a>
+<ul>
+<li><a href="#321-%E9%81%B8%E6%93%87%E5%B9%B3%E5%8F%B0">3.2.1 &#x9078;&#x64C7;&#x5E73;&#x53F0;</a></li>
+<li><a href="#322-%E5%AE%89%E8%A3%9D%E5%92%8C%E9%85%8D%E7%BD%AE-zabbix-server">3.2.2 &#x5B89;&#x88DD;&#x548C;&#x914D;&#x7F6E; Zabbix-Server</a>
+<ul>
+<li><a href="#a-%E5%AE%89%E8%A3%9D-zabbix-repository">a. &#x5B89;&#x88DD; Zabbix repository</a></li>
+<li><a href="#b-%E5%AE%89%E8%A3%9D-zabbix-server-frontend-agent">b. &#x5B89;&#x88DD; Zabbix server, frontend, agent</a></li>
+<li><a href="#c-%E5%AE%89%E8%A3%9D%E5%92%8C%E5%95%9F%E5%8B%95-mysql">c. &#x5B89;&#x88DD;&#x548C;&#x555F;&#x52D5; MySQL</a></li>
+<li><a href="#d-%E6%96%B0%E5%A2%9E%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%BA%AB">d. &#x65B0;&#x589E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x8CC7;&#x6599;&#x5EAB;</a></li>
+</ul>
+</li>
+<li><a href="#323-%E8%A8%AD%E7%BD%AE-zabbix-server-%E5%8F%83%E6%95%B8">3.2.3 &#x8A2D;&#x7F6E; Zabbix-Server &#x53C3;&#x6578;</a>
+<ul>
+<li><a href="#a-%E8%A8%AD%E7%BD%AE-php-for-zabbix-fronted">a. &#x8A2D;&#x7F6E; PHP for Zabbix fronted</a></li>
+<li><a href="#b-%E9%87%8D%E5%95%9F-zabbix-server-and-agent-processes">b. &#x91CD;&#x555F; Zabbix server and agent processes</a></li>
+</ul>
+</li>
+<li><a href="#324-%E9%98%B2%E7%81%AB%E7%89%86%E5%92%8C%E6%AC%8A%E9%99%90%E9%85%8D%E7%BD%AE">3.2.4. &#x9632;&#x706B;&#x7246;&#x548C;&#x6B0A;&#x9650;&#x914D;&#x7F6E;</a></li>
+<li><a href="#325-%E9%85%8D%E7%BD%AE-zabbix-web">3.2.5. &#x914D;&#x7F6E; Zabbix-Web</a></li>
+<li><a href="#326-%E7%9B%B8%E9%97%9C%E6%95%85%E9%9A%9C%E8%99%95%E7%90%86">3.2.6 &#x76F8;&#x95DC;&#x6545;&#x969C;&#x8655;&#x7406;</a></li>
+<li><a href="#327-zabbix_server-%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%83%E6%95%B8">3.2.7 zabbix_server &#x7A0B;&#x5E8F;&#x7684;&#x53C3;&#x6578;</a></li>
+</ul>
+</li>
+<li><a href="#33-zabbix-agent-%E5%AE%A2%E6%88%B6%E7%AB%AF%E7%9A%84%E5%AE%89%E8%A3%9D">3.3 Zabbix-Agent &#x5BA2;&#x6236;&#x7AEF;&#x7684;&#x5B89;&#x88DD;</a>
+<ul>
+<li><a href="#331-%E5%AE%89%E8%A3%9D-zabbix-agent">3.3.1 &#x5B89;&#x88DD; Zabbix-Agent</a></li>
+<li><a href="#332-%E9%98%B2%E7%81%AB%E7%89%86%E8%A8%AD%E7%BD%AE">3.3.2 &#x9632;&#x706B;&#x7246;&#x8A2D;&#x7F6E;</a></li>
+<li><a href="#333-%E9%85%8D%E7%BD%AE-zabbix_agentdconf">3.3.3 &#x914D;&#x7F6E; zabbix_agentd.conf</a></li>
+<li><a href="#34-snmp-%E7%9B%A3%E6%8E%A7%E9%85%8D%E7%BD%AE">3.4 SNMP &#x76E3;&#x63A7;&#x914D;&#x7F6E;</a></li>
+</ul>
+</li>
+<li><a href="#35-windows-%E4%B8%AD%E5%AE%89%E8%A3%9D-zabbix-agent">3.5 Windows &#x4E2D;&#x5B89;&#x88DD; Zabbix-Agent</a>
+<ul>
+<li><a href="#351-%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE">3.5.1 &#x5B89;&#x88DD;&#x8207;&#x914D;&#x7F6E;</a></li>
+<li><a href="#352-%E8%A8%BB%E5%86%8A%E6%9C%8D%E5%8B%99">3.5.2 &#x8A3B;&#x518A;&#x670D;&#x52D9;</a></li>
+</ul>
+</li>
+<li><a href="#36-%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%9D-zabbix-agent">3.6 &#x5176;&#x4ED6;&#x5E73;&#x53F0;&#x5B89;&#x88DD; Zabbix-Agent</a></li>
+<li><a href="#37-zabbix-get-%E4%BD%BF%E7%94%A8">3.7 Zabbix-Get &#x4F7F;&#x7528;</a></li>
+<li><a href="#38-zabbix-%E7%9B%B8%E9%97%9C%E8%A1%93%E8%AA%9E-%E6%8C%87%E4%BB%A4">3.8 Zabbix &#x76F8;&#x95DC;&#x8853;&#x8A9E; (&#x6307;&#x4EE4;)</a></li>
+<li><a href="#39-zabbix-server-%E5%B0%8D%E6%95%B8%E6%93%9A%E7%9A%84%E5%AD%98%E5%84%B2">3.9 Zabbix-Server &#x5C0D;&#x6578;&#x64DA;&#x7684;&#x5B58;&#x5132;</a>
+<ul>
+<li><a href="#391-%E7%9B%A3%E6%8E%A7%E6%95%B8%E6%93%9A%E5%AD%98%E5%84%B2">3.9.1 &#x76E3;&#x63A7;&#x6578;&#x64DA;&#x5B58;&#x5132;</a></li>
+<li><a href="#392-mysql-%E8%A1%A8%E5%88%86%E5%8D%80%E5%AF%A6%E4%BD%9C">3.9.2 MySQL &#x8868;&#x5206;&#x5340;&#x5BE6;&#x4F5C;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="31-%E5%AE%89%E8%A3%9D%E7%92%B0%E5%A2%83%E6%A6%82%E8%BF%B0">3.1 &#x5B89;&#x88DD;&#x74B0;&#x5883;&#x6982;&#x8FF0;</h2>
+
+<p>&#x2003;&#x2003;Zabbix-Server &#x904B;&#x884C;&#x74B0;&#x5883;&#x70BA; Linux(UNIX) + PHP + Database&#xFF0C;PHP &#x53EF;&#x4EE5;&#x8207; Nginx or Apache &#x7D44;&#x5408;&#x4F7F;&#x7528;&#xFF0C;Database &#x53EF;&#x4EE5;&#x9078;&#x64C7; MySQL&#x3001;Oracle&#x3001;PostgrSQL&#x3002;&#x672C;&#x7AE0;&#x7BC0;&#x7531; CentOS 8 (64 &#x4F4D;)&#x3001;httpd&#x3001;PHP &#x548C; MariaDB &#x7D44;&#x6210;&#x3002;</p>
+<h3 class="mume-header" id="311-%E7%A1%AC%E9%AB%94%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.1 &#x786C;&#x9AD4;&#x74B0;&#x5883;&#x9700;&#x6C42;</h3>
+
+<p>&#x2003;&#x2003;<strong>1. &#x786C;&#x9AD4;&#x914D;&#x7F6E;&#x9700;&#x6C42;</strong><br>
+&#x2003;&#x2003;&#x5C0D;&#x65BC;&#x6700;&#x5C0F;&#x5316;&#x5B89;&#x88DD;&#x74B0;&#x5883;&#xFF0C;&#x5B98;&#x65B9;&#x63A8;&#x85A6;&#x7684;&#x786C;&#x9AD4;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x74B0;&#x5883;</th>
+<th style="text-align:left">&#x5E73;&#x53F0;</th>
+<th style="text-align:left">CPU/MEM</th>
+<th style="text-align:left">&#x8CC7;&#x6599;&#x5EAB;</th>
+<th style="text-align:left">&#x786C;&#x9AD4;</th>
+<th style="text-align:left">&#x76E3;&#x63A7;&#x4E3B;&#x6A5F;&#x6578;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x5C0F;&#x578B;</td>
+<td style="text-align:left">CentOS</td>
+<td style="text-align:left">2 Core/1GB</td>
+<td style="text-align:left">MySQL&#x3001;InnoDB</td>
+<td style="text-align:left">&#x666E;&#x901A;</td>
+<td style="text-align:left">100</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4E2D;&#x578B;</td>
+<td style="text-align:left">CentOS</td>
+<td style="text-align:left">2 Core/2GB</td>
+<td style="text-align:left">MySQL&#x3001;InnoDB</td>
+<td style="text-align:left">&#x666E;&#x901A;</td>
+<td style="text-align:left">500</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x5927;&#x578B;</td>
+<td style="text-align:left">Red Hat Enterprise Linux</td>
+<td style="text-align:left">4 Core/8GB</td>
+<td style="text-align:left">MySQL&#x3001;InnoDB&#x3001;PostgreSQL</td>
+<td style="text-align:left">RAID 10 SAS or SSD</td>
+<td style="text-align:left">&gt; 1000</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x8D85;&#x5927;&#x578B;</td>
+<td style="text-align:left">Red Hat Enterprise Linux</td>
+<td style="text-align:left">8 Core/16GB</td>
+<td style="text-align:left">MySQL&#x3001;InnoDB&#x3001;PostgreSQL</td>
+<td style="text-align:left">RAID 10 SAS or SSD</td>
+<td style="text-align:left">&gt; 10000</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5C0D;&#x65BC;&#x5177;&#x9AD4;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x8207;<strong>&#x76E3;&#x63A7;&#x7684;&#x6A5F;&#x5668;&#x6578;&#x91CF;&#x548C;&#x6578;&#x64DA;&#x91CF;</strong>&#xFF0C;&#x95DC;&#x4FC2;&#x5BC6;&#x5207;&#xFF0C;&#x4E00;&#x822C;&#x4F86;&#x8AAA;&#xFF0C;&#x786C;&#x789F; I/O &#x51FA;&#x73FE;&#x7684;&#x74F6;&#x9838;&#x7684;&#x6982;&#x7387;&#x5927;&#x4E00;&#x4E9B;&#x3002;&#x9078;&#x7528;&#x7269;&#x7406;&#x670D;&#x52D9;&#x5668;&#xFF0C;&#x6027;&#x80FD;&#x6703;&#x8F03;&#x597D;&#x3002;&#x5C0D;&#x65BC;&#x4E2D;&#x5927;&#x578B;&#x74B0;&#x5883;&#x4F86;&#x8AAA;&#xFF0C;&#x5EFA;&#x8B70;&#x63A1;&#x7528;&#x7269;&#x7406;&#x6A5F;&#x4F86;&#x642D;&#x5EFA;&#x76E3;&#x63A7;&#x74B0;&#x5883;&#xFF0C;&#x786C;&#x789F;&#x9078;&#x7528; SAS/SSD/PCIE SSD&#x3002;&#x5982;&#x679C;&#x662F; SAS &#x786C;&#x789F;&#xFF0C;&#x5EFA;&#x8B70;&#x505A; RAID 10&#xFF0C;&#x4EE5;&#x4FDD;&#x8B49;&#x5176;&#x8B80;/&#x5BEB;&#x6027;&#x80FD;&#x548C;&#x7269;&#x7406;&#x5B89;&#x5168;&#x3002;&#x4E0D;&#x8AD6;&#x642D;&#x5EFA;&#x74B0;&#x5883;&#x662F;&#x5728;&#x7269;&#x7406;&#x3001;&#x865B;&#x64EC;&#x6A5F;&#x6216;&#x662F;&#x96F2;&#xFF0C;&#x5728;&#x6574;&#x500B; Zabbix &#x76E3;&#x63A7;&#x7CFB;&#x7D71;&#x642D;&#x5EFA;&#x4E2D;&#xFF0C;<strong>&#x786C;&#x789F; I/O &#x6027;&#x80FD;&#x3001;&#x8CC7;&#x6599;&#x5EAB;&#x6027;&#x80FD;</strong>&#x662F;&#x7CFB;&#x7D71;&#x826F;&#x597D;&#x904B;&#x884C;&#x7684;&#x91CD;&#x8981;&#x56E0;&#x7D20;&#x3002;</p>
+<p>&#x2003;&#x2003;<strong>2. &#x786C;&#x789F;&#x7A7A;&#x9593;&#x8981;&#x6C42;</strong><br>
+&#x2003;&#x2003;Zabbix-Server &#x6240;&#x9700;&#x7684;&#x786C;&#x789F;&#x7A7A;&#x9593;&#x53D6;&#x6C7A;&#x65BC;&#x76E3;&#x63A7;&#x6578;&#x64DA;&#x7684;&#x66F4;&#x65B0;&#x983B;&#x7387;&#x3001;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x983B;&#x7387;&#x7684;&#x6578;&#x64DA;&#x5927;&#x5C0F;&#x3001;&#x76E3;&#x63A7;&#x6578;&#x5B58;&#x5132;&#x6B77;&#x53F2;&#x9031;&#x671F;&#x3001;&#x76E3;&#x63A7;&#x6578;&#x64DA;&#x522A;&#x9664;&#x7B56;&#x7565;&#x4EE5;&#x53CA;&#x8CC7;&#x6599;&#x5EAB;&#x672C;&#x8EAB;&#x65E5;&#x8A8C;&#x5927;&#x5C0F;&#x7B49;&#x3002;&#x8861;&#x91CF;&#x8CC7;&#x6599;&#x5EAB;&#x5BEB;&#x5165;&#x7684;&#x4E00;&#x500B;&#x95DC;&#x9375;&#x6307;&#x6A19;&#x662F; NVPS (New Values Per Second)&#x3002;</p>
+<p><img src="images\1.png" alt></p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;(1) &#x6B77;&#x53F2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;NVPS &#x503C;&#x6240;&#x6307;&#x6BCF;&#x79D2;&#x8655;&#x7406;&#x7684;&#x5E73;&#x5747;&#x6578;&#x64DA;&#x91CF;&#xFF0C;&#x901A;&#x904E;&#x9019;&#x500B;&#x503C;&#x53EF;&#x4EE5;&#x8A08;&#x7B97;&#x51FA;&#x8CC7;&#x6599;&#x5EAB;&#x6240;&#x9700;&#x7684;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x3002;&#x4F8B;&#x5982;<strong>&#x6BCF;&#x7B46;&#x6578;&#x64DA;&#x5360;&#x7528; 50 B &#x7684;&#x5B58;&#x5132;&#x7A7A;&#x9593;&#xFF0C;&#x56E0;&#x6B64; NVPS x &#x6BCF;&#x7B46;&#x6578;&#x64DA;&#x7684;&#x5E73;&#x5747;&#x5927;&#x5C0F; = &#x6B77;&#x53F2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F;</strong>&#x3002;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x7684;&#x8A08;&#x7B97;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7684;&#x7A7A;&#x9593;&#x5927;&#x5C0F; = &#x5929;&#x6578; x &#x6BCF;&#x79D2;&#x8655;&#x7406;&#x7684;&#x6578;&#x64DA;&#x91CF; x 1 &#x5929; x 24 &#x5C0F;&#x6642; x 1 &#x5C0F;&#x6642; 3600s x 50 B</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x4F8B;&#x5982;&#x6709; 60000 &#x500B;&#x76E3;&#x63A7;&#x9805;&#xFF0C;&#x76E3;&#x63A7;&#x6307;&#x6A19;&#x6578;&#x64DA;&#x66F4;&#x65B0;&#x9031;&#x671F;&#x70BA; 60s&#xFF0C;&#x6BCF;&#x79D2;&#x9700;&#x8981;&#x8655;&#x7406;&#x7684;&#x6578;&#x64DA;&#x91CF;&#x70BA; 60000 / 60 = 1000 &#x689D;&#xFF0C;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x4FDD;&#x7559; 90 &#x5929;&#xFF0C;&#x8A08;&#x7B97;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>(90 x 24 x 3600) x 1000 x 50 = 388800000000 (B), &#x7D04; 362 GB</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;(2) &#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x6309;&#x7167;&#x7D71;&#x8A08;&#x62BD;&#x6A23;&#x5F97;&#x51FA;&#x7D50;&#x8AD6;&#xFF0C;&#x5728; MySQL &#x4E2D;&#x6BCF;&#x4E00;&#x500B;&#x76E3;&#x63A7;&#x9805;&#x7684;&#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x7D04;&#x70BA; <strong>128 B</strong>&#x3002;&#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7684;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F; = &#x76E3;&#x63A7;&#x9805; x &#x6BCF;&#x5929; 24 &#x5C0F;&#x6642; x &#x4E00;&#x5E74; 365 &#x5929; x 128 B</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x5047;&#x8A2D;&#x6709; 60000 &#x76E3;&#x63A7;&#x9805;&#xFF0C;&#x4FDD;&#x5B58;&#x4E00;&#x5E74;&#x7684;&#x8DA8;&#x52E2;&#x6578;&#x64DA;&#xFF0C;&#x5176;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>60000 x 24 x 365 x 128 = 67276800000 (B)&#xFF0C;&#x7D04;&#x70BA; 67 GB</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;(3) &#x4E8B;&#x4EF6;&#x6578;&#x64DA;&#x6240;&#x9700;&#x7A7A;&#x9593;&#x5927;&#x5C0F;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x6BCF;&#x500B;&#x4E8B;&#x4EF6;&#x90FD;&#x5360;&#x7528; 130 B &#x7A7A;&#x9593;&#xFF0C;&#x5047;&#x8A2D;&#x4FDD;&#x5B58;&#x4E8B;&#x4EF6;&#x6578;&#x64DA;&#x4E00;&#x5E74;&#xFF0C;&#x5247;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>1 x 24 x 365 x 130 = 4099680000 (B)&#xFF0C;&#x7D04;&#x70BA; 4 GB</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x56E0;&#x6B64;&#xFF0C;60000 &#x500B;&#x76E3;&#x63A7;&#x9805;&#xFF0C;&#x66F4;&#x65B0;&#x6578;&#x64DA;&#x9031;&#x671F;&#x70BA; 60s&#xFF0C;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x4FDD;&#x7559; 90 &#x5929;&#xFF0C;&#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x4FDD;&#x7559;&#x4E00;&#x5E74;&#xFF0C;&#x7E3D;&#x5171;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x4EF6;&#x5927;&#x5C0F;&#x70BA;&#xFF1A;</p>
+<blockquote>
+<p>362 + 67 + 4 = 433 (GB)</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x5728;&#x771F;&#x5BE6;&#x751F;&#x7522;&#x74B0;&#x5883;&#x4E2D;&#x6240;&#x9700;&#x7684;&#x786C;&#x789F;&#x7A7A;&#x9593;&#x6703;&#x66F4;&#x591A;&#xFF0C;&#x56E0;&#x70BA;&#x8CC7;&#x6599;&#x5EAB;&#x672C;&#x8EAB;&#x6709;&#x65E5;&#x8A8C;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x500B;&#x76E3;&#x63A7;&#x9805;&#x6578;&#x64DA;&#x7684;&#x5927;&#x5C0F;&#x8207;&#x7406;&#x8AD6;&#x503C;&#x4E5F;&#x6709;&#x504F;&#x5DEE;&#xFF0C;&#x56E0;&#x6B64;&#x786C;&#x789F;&#x7A7A;&#x9593;&#x53EF;&#x80FD;&#x6703;&#x8D85;&#x904E; 500 GB&#xFF0C;&#x6545;&#x9808;&#x63D0;&#x4F9B;&#x7684;&#x786C;&#x789F;&#x7A7A;&#x9593;&#x5927;&#x5C0F;&#x8981;&#x5927;&#x65BC; 500 GB&#x3002;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;(4) &#x8A08;&#x7B97;&#x516C;&#x5F0F;&#x7E3D;&#x7D50;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x786C;&#x789F;&#x7A7A;&#x9593;&#x8A08;&#x7B97;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9078;&#x9805;</th>
+<th style="text-align:left">&#x6240;&#x9700;&#x7684;&#x786C;&#x789F;&#x7A7A;&#x9593; (&#x55AE;&#x4F4D; B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Zabbix &#x914D;&#x7F6E;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x7D04; 10 MB&#xFF0C;&#x53D6;&#x6C7A;&#x65BC;&#x76E3;&#x63A7;&#x4E3B;&#x6A5F;&#x7684;&#x898F;&#x6A21;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x6B77;&#x53F2;&#x6578;&#x64DA;</td>
+<td style="text-align:left"><strong>days x (items/refresh) x 24 x 3600 x bytes</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x8DA8;&#x52E2;&#x6578;&#x64DA;</td>
+<td style="text-align:left"><strong>days x (items/3600) x 24 x 3600 x bytes</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4E8B;&#x4EF6;&#x6578;&#x64DA;</td>
+<td style="text-align:left"><strong>days x events x 24 x 3600 x bytes</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x6240;&#x9700;&#x786C;&#x789F;&#x7E3D;&#x7A7A;&#x9593;</td>
+<td style="text-align:left">&#x914D;&#x7F6E;&#x6578;&#x64DA;&#x7A7A;&#x9593; + &#x6B77;&#x53F2;&#x6578;&#x64DA;&#x7A7A;&#x9593; + &#x8DA8;&#x52E2;&#x6578;&#x64DA;&#x7A7A;&#x9593; + &#x4E8B;&#x4EF6;&#x6578;&#x64DA;&#x7A7A;&#x9593;</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="312-%E8%BB%9F%E9%AB%94%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.2 &#x8EDF;&#x9AD4;&#x74B0;&#x5883;&#x9700;&#x6C42;</h3>
+
+<p>&#x2003;&#x2003;<strong>1. &#x64CD;&#x4F5C;&#x7CFB;&#x7D71;&#x7248;&#x672C;&#x9700;&#x6C42;</strong><br>
+&#x2003;&#x2003;&#x2003;&#x2003;&#x7531;&#x65BC; Zabbix &#x6838;&#x5FC3;&#x7D44;&#x4EF6;&#x7531; C &#x8A9E;&#x8A00;&#x64B0;&#x5BEB;&#xFF0C;&#x6240;&#x4EE5;&#x7406;&#x8AD6;&#x4E0A;&#x53EF;&#x652F;&#x6301; Linux&#x3001;UNIX&#x3001;Windows &#x7B49;&#x4F5C;&#x696D;&#x7CFB;&#x7D71;&#x3002;&#x4F46; Zabbix-Server &#x548C; Zabbix-Proxy &#x4E0D;&#x652F;&#x6301; Windows &#x7CFB;&#x7D71; (&#x5E95;&#x5C64;&#x4F9D;&#x8CF4; UNIX &#x7279;&#x6027;)&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7CFB;&#x7D71;&#x767C;&#x884C;&#x7248;</th>
+<th style="text-align:left">Zabbix-Server</th>
+<th style="text-align:left">Zabbix-Proxy</th>
+<th style="text-align:left">Zabbix-Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AIX</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">FreeBSD</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">HP-UX</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Linux</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Mac OS X</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Novell Netware</td>
+<td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Open BSD</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">SCO Open Server</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Solaris</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Tru64/OSF</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+<td style="text-align:left">&#x652F;&#x6301;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;<strong>2. &#x8CC7;&#x6599;&#x5EAB;&#x7248;&#x672C;&#x9700;&#x6C42;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8CC7;&#x6599;&#x5EAB;</th>
+<th style="text-align:left">&#x7248;&#x672C;</th>
+<th style="text-align:left">&#x5099;&#x8A3B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MySQL</td>
+<td style="text-align:left">&gt;= 5.6</td>
+<td style="text-align:left">&#x9700;&#x8981;&#x652F;&#x6301; InnoDB &#x5B58;&#x5132;&#x5F15;&#x64CE;</td>
+</tr>
+<tr>
+<td style="text-align:left">Oracle</td>
+<td style="text-align:left">&gt;= 10g</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">PostgreSQL</td>
+<td style="text-align:left">&gt;= 8.1</td>
+<td style="text-align:left">&#x5EFA;&#x8B70;&#x4F7F;&#x7528; 8.3&#xFF0C;&#x6709;&#x8F03;&#x597D;&#x6027;&#x80FD;</td>
+</tr>
+<tr>
+<td style="text-align:left">SQLite</td>
+<td style="text-align:left">&gt;= 3.3.5</td>
+<td style="text-align:left">&#x50C5;&#x652F;&#x6301; Zabbix-Proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">IBM DB2</td>
+<td style="text-align:left">&gt;= 9.7</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;<strong>3. Zabbix-Web &#x6240;&#x9700;&#x8EDF;&#x9AD4;&#x74B0;&#x5883;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8EDF;&#x9AD4;</th>
+<th style="text-align:left">&#x7248;&#x672C;</th>
+<th style="text-align:left">&#x5099;&#x8A3B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Apache</td>
+<td style="text-align:left">&gt;= 1.3.12</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">PHP</td>
+<td style="text-align:left">&gt;= 5.4.0</td>
+<td style="text-align:left">Zabbix 3.0 &#x9700;&#x8981; 5.4 &#x4EE5;&#x4E0A;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>&#x4EE5;&#x4E0B;&#x70BA; PHP &#x64F4;&#x5C55;&#x652F;&#x6301;</strong></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">gd</td>
+<td style="text-align:left">&gt;= 2.0</td>
+<td style="text-align:left">PHP GD &#x64F4;&#x5C55;&#x9700;&#x8981;&#x652F;&#x6301; PNG&#x3001;JPEG &#x548C; FreeType2</td>
+</tr>
+<tr>
+<td style="text-align:left">bcmath</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-bcmath</td>
+</tr>
+<tr>
+<td style="text-align:left">ctype</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-ctype</td>
+</tr>
+<tr>
+<td style="text-align:left">libXML</td>
+<td style="text-align:left">&gt;= 2.6.15</td>
+<td style="text-align:left">php-xml or php5-dom</td>
+</tr>
+<tr>
+<td style="text-align:left">xmlreader</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-xmlreader</td>
+</tr>
+<tr>
+<td style="text-align:left">Xmlwriter</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-xmlwriter</td>
+</tr>
+<tr>
+<td style="text-align:left">session</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-session</td>
+</tr>
+<tr>
+<td style="text-align:left">sockets</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-net-socket</td>
+</tr>
+<tr>
+<td style="text-align:left">mbstring</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-mbstring</td>
+</tr>
+<tr>
+<td style="text-align:left">gettext</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">php-gettext</td>
+</tr>
+<tr>
+<td style="text-align:left">ibm_db2</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4F7F;&#x7528; DB2 &#x9700;&#x8981;&#x6B64;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">mysqli</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4F7F;&#x7528; MySQL &#x9700;&#x8981;&#x6B64;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">oci8</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4F7F;&#x7528; Oracle &#x9700;&#x8981;&#x6B64;&#x53C3;&#x6578;</td>
+</tr>
+<tr>
+<td style="text-align:left">pgsql</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4F7F;&#x7528; PostgreSQL &#x9700;&#x8981;&#x6B64;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td style="text-align:left">sqlite3</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4F7F;&#x7528; SQLite &#x9700;&#x8981;&#x6B64;&#x652F;&#x6301;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;<strong>4. &#x652F;&#x6301;&#x7684;&#x700F;&#x89BD;&#x5668;</strong></p>
+<p>&#x2003;&#x2003;&#x700F;&#x89BD;&#x5668;&#x9700;&#x8981;&#x652F;&#x6301; Cookies&#x3001;JavaScript&#x3002;</p>
+<p>&#x2003;&#x2003;<strong>5. Zabbix-Server &#x8EDF;&#x9AD4;&#x9700;&#x6C42;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x4F9D;&#x8CF4;&#x8EDF;&#x9AD4;</th>
+<th style="text-align:left">&#x8AAA;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">libpcre</td>
+<td style="text-align:left">&#x652F;&#x6301;&#x6B63;&#x5247;&#x8868;&#x9054;&#x5F0F;&#xFF0C;&#x9078;&#x64C7; PRCE v8.X &#x4EE5;&#x4E0A;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:left">libevent</td>
+<td style="text-align:left">&#x652F;&#x6301; IPMI &#x76E3;&#x63A7;</td>
+</tr>
+<tr>
+<td style="text-align:left">libpthread</td>
+<td style="text-align:left">&#x652F;&#x6301;&#x4E92;&#x65A5;&#x9396;&#x548C;&#x8B80;&#x5BEB;&#x9396;</td>
+</tr>
+<tr>
+<td style="text-align:left">OpenIPMI</td>
+<td style="text-align:left">&#x652F;&#x6301; IPMI</td>
+</tr>
+<tr>
+<td style="text-align:left">libssh2</td>
+<td style="text-align:left">&#x5982;&#x9700;&#x8981;&#x652F;&#x6301; SSH&#xFF0C;&#x5247;&#x9700;&#x8981; libssh 1.0 &#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:left">fping</td>
+<td style="text-align:left">&#x652F;&#x6301; ICMP Ping</td>
+</tr>
+<tr>
+<td style="text-align:left">libcurl</td>
+<td style="text-align:left">&#x652F;&#x6301; Web &#x76E3;&#x63A7;&#x3001;SMTP &#x8A8D;&#x8B49;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981; 7.20 &#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:left">libiksemel</td>
+<td style="text-align:left">&#x652F;&#x6301; Jabber &#x544A;&#x8B66;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td style="text-align:left">net-snmp</td>
+<td style="text-align:left">&#x652F;&#x6301; SNMP</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;<strong>6. &#x6642;&#x9593;&#x540C;&#x6B65;&#x9700;&#x6C42;</strong></p>
+<p>&#x2003;&#x2003;Zabbix-Server &#x5C0D;&#x6642;&#x9593;&#x7684;&#x7CBE;&#x6E96;&#x8981;&#x6C42;&#x6BD4;&#x8F03;&#x9AD8;&#xFF0C;&#x6642;&#x9593;&#x5C0D;&#x6578;&#x64DA;&#x7684;&#x8A08;&#x7B97;&#x7B49;&#x90FD;&#x6709;&#x5F71;&#x97FF;&#xFF0C;&#x56E0;&#x6B64;&#x5FC5;&#x9808;&#x8A2D;&#x7F6E; Chrony &#x81EA;&#x52D5;&#x540C;&#x6B65;&#x6642;&#x9593;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">dnf <span class="token function">install</span> chrony
+
+<span class="token comment"># &#x4FEE;&#x6539; /etc/chrony.conf &#x914D;&#x7F6E;</span>
+<span class="token comment"># pool time.stdtime.gov.tw iburst</span>
+
+systemctl <span class="token builtin class-name">enable</span> chronyd.service
+systemctl start chronyd.service
+</pre><p>&#x2003;&#x2003;<strong>7. SELinux &#x914D;&#x7F6E;</strong></p>
+<p>&#x2003;&#x2003;&#x95DC;&#x9589; SELinux&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"> setenforce <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> -i <span class="token string">&apos;s/^SELINUX=.*/SELINUX=permissive/g&apos;</span> /etc/selinux/config
+</pre><h3 class="mume-header" id="313-%E7%B6%B2%E8%B7%AF%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82">3.1.3 &#x7DB2;&#x8DEF;&#x74B0;&#x5883;&#x9700;&#x6C42;</h3>
+
+<p>&#x2003;&#x2003;&#x76E1;&#x91CF;&#x5C07; Zabbix-Server &#x90E8;&#x7F72;&#x5728;&#x6838;&#x5FC3;&#x6A5F;&#x623F;&#xFF0C;&#x8981;&#x6C42;&#x5230;&#x5404;&#x7BC0;&#x9EDE;&#x7DB2;&#x8DEF;&#x7A69;&#x5B9A;&#x3002;&#x53E6;&#x5916;&#x8981;&#x8003;&#x616E;&#x5230;&#x7DB2;&#x8DEF;&#x6D41;&#x91CF;&#x3001;&#x5E36;&#x5BEC;&#x7B49;&#x554F;&#x984C;&#x3002;</p>
+<h2 class="mume-header" id="32-zabbix-server-%E5%AE%89%E8%A3%9D">3.2 Zabbix-Server &#x5B89;&#x88DD;</h2>
+
+<p>&#x2003;&#x2003;&#x4E0B;&#x9762;&#x4EE5; CentOS 8 (64 &#x4F4D;&#x5143;) &#x70BA;&#x4F8B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5230; <a href="https://www.zabbix.com/download?zabbix=5.0&amp;os_distribution=centos&amp;os_version=8&amp;db=mysql&amp;ws=apache">Zabbix Download</a> &#x4F9D;&#x7167;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x9078;&#x64C7;&#x5B89;&#x88DD;&#x3002;</p>
+<h3 class="mume-header" id="321-%E9%81%B8%E6%93%87%E5%B9%B3%E5%8F%B0">3.2.1 &#x9078;&#x64C7;&#x5E73;&#x53F0;</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ZABBIX VERSION</th>
+<th style="text-align:center">OS DISTRIBUTION</th>
+<th style="text-align:center">OS VERSION</th>
+<th style="text-align:center">DATABASE</th>
+<th style="text-align:center">WEB SERVER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5.0 LTS</td>
+<td style="text-align:center">CentOS</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">MySQL</td>
+<td style="text-align:center">Apache</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="322-%E5%AE%89%E8%A3%9D%E5%92%8C%E9%85%8D%E7%BD%AE-zabbix-server">3.2.2 &#x5B89;&#x88DD;&#x548C;&#x914D;&#x7F6E; Zabbix-Server</h3>
+
+<h4 class="mume-header" id="a-%E5%AE%89%E8%A3%9D-zabbix-repository">a. &#x5B89;&#x88DD; Zabbix repository</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">rpm</span> -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
+dnf clean all
+</pre><h4 class="mume-header" id="b-%E5%AE%89%E8%A3%9D-zabbix-server-frontend-agent">b. &#x5B89;&#x88DD; Zabbix server, frontend, agent</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5728; Zabbix-Server &#x4E0A;&#x5B89;&#x88DD; Zabbix-Agent&#xFF0C;&#x662F;&#x70BA;&#x4E86;&#x901A;&#x904E; Agent &#x65B9;&#x5F0F;&#x76E3;&#x63A7; Zabbix-Server &#x4F3A;&#x670D;&#x5668;&#x672C;&#x8EAB;&#x7684;&#x904B;&#x884C;&#x72C0;&#x6CC1;</span>
+dnf <span class="token function">install</span> zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-agent
+</pre><h4 class="mume-header" id="c-%E5%AE%89%E8%A3%9D%E5%92%8C%E5%95%9F%E5%8B%95-mysql">c. &#x5B89;&#x88DD;&#x548C;&#x555F;&#x52D5; MySQL</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">dnf <span class="token function">install</span> mariadb-server
+systemctl <span class="token builtin class-name">enable</span> mariadb.service
+systemctl start mariadb.service
+</pre><h4 class="mume-header" id="d-%E6%96%B0%E5%A2%9E%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%BA%AB">d. &#x65B0;&#x589E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x8CC7;&#x6599;&#x5EAB;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">mysql -uroot -p
+<span class="token comment"># &#x5EFA;&#x7ACB;&#x540D;&#x70BA; zabbix &#x7684;&#x8CC7;&#x6599;&#x5EAB;&#xFF0C;&#x4E26;&#x8A2D;&#x7F6E;&#x5B57;&#x5143;&#x70BA; UTF-8</span>
+mysql<span class="token operator">&gt;</span> create database zabbix character <span class="token builtin class-name">set</span> utf8 collate utf8_bin<span class="token punctuation">;</span>
+<span class="token comment"># &#x5EFA;&#x7ACB;&#x4F7F;&#x7528;&#x8005; zabbix &#x4EE5;&#x53CA;&#x5BC6;&#x78BC;</span>
+mysql<span class="token operator">&gt;</span> create user zabbix@localhost identified by <span class="token string">&apos;password&apos;</span><span class="token punctuation">;</span>
+<span class="token comment"># &#x8A2D;&#x7F6E; zabbix &#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x6240;&#x6709;&#x6B0A;&#x9650;&#xFF0C;&#x5141;&#x8A31;&#x7528;&#x6236; zabbix &#x7684; IP localhost &#x8A2A;&#x554F;</span>
+mysql<span class="token operator">&gt;</span> grant all privileges on zabbix.* to zabbix@localhost<span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span> quit<span class="token punctuation">;</span>
+</pre><p>&#x2003;&#x2003;&#x5728; Zabbix-Server &#x4E3B;&#x6A5F;&#x4E0A;&#x5C0E;&#x5165;&#x521D;&#x59CB;&#x5316;&#x6A21;&#x5F0F;&#x548C;&#x6578;&#x64DA;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz <span class="token operator">|</span> mysql -uzabbix -p zabbix
+</pre><h3 class="mume-header" id="323-%E8%A8%AD%E7%BD%AE-zabbix-server-%E5%8F%83%E6%95%B8">3.2.3 &#x8A2D;&#x7F6E; Zabbix-Server &#x53C3;&#x6578;</h3>
+
+<p>&#x2003;&#x2003;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/zabbix/zabbix_server.conf</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token assign-left variable">DBPassword</span><span class="token operator">=</span>password
+
+<span class="token comment"># &#x4EE5;&#x4E0B;&#x90E8;&#x5206;&#x70BA;&#x6027;&#x80FD;&#x8ABF;&#x6559;&#x53C3;&#x6578;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x64DA;&#x5BE6;&#x969B;&#x60C5;&#x6CC1;&#x9032;&#x884C;&#x8ABF;&#x6574;</span>
+<span class="token assign-left variable">DBHost</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1 <span class="token comment"># &#x9700;&#x8981;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">DBName</span><span class="token operator">=</span>zabbix    <span class="token comment"># &#x9ED8;&#x8A8D;</span>
+<span class="token assign-left variable">DBUser</span><span class="token operator">=</span>zabbix    <span class="token comment"># &#x9ED8;&#x8A8D;</span>
+<span class="token assign-left variable">DBPassword</span><span class="token operator">=</span>zabbix <span class="token comment"># &#x9700;&#x8981;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">StartPollers</span><span class="token operator">=</span><span class="token number">100</span> <span class="token comment"># &#x7D04; 5 &#x53F0;&#x670D;&#x52D9;&#x5668;&#x958B;&#x4E00;&#x500B;&#x9032;&#x7A0B;&#xFF0C;&#x6700;&#x5927; 1000</span>
+<span class="token assign-left variable">StartIPMIPollers</span><span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># &#x8996; IPMI &#x76E3;&#x63A7;&#x4E3B;&#x6A5F;&#x500B;&#x6578;&#x800C;&#x5B9A;</span>
+<span class="token assign-left variable">StartPollersUnreachable</span><span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># &#x4E0D;&#x53EF;&#x9054;&#x4E3B;&#x6A5F;&#x91CD;&#x8A66;&#x7372;&#x53D6;&#x6578;&#x64DA;&#x9032;&#x7A0B;&#x500B;&#x6578;</span>
+<span class="token assign-left variable">StartTrappers</span><span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># Trapper &#x9032;&#x7A0B;&#x500B;&#x6578;</span>
+<span class="token assign-left variable">StartPingers</span><span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># Ping &#x9032;&#x7A0B;&#x500B;&#x6578;</span>
+<span class="token assign-left variable">StartDiscoverers</span><span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># &#x81EA;&#x52D5;&#x767C;&#x73FE;&#x9032;&#x7A0B;&#x500B;&#x6578;</span>
+<span class="token assign-left variable">CacheSize</span><span class="token operator">=</span>256M <span class="token comment"># &#x53EF;&#x6839;&#x64DA;&#x5BE6;&#x969B;&#x60C5;&#x6CC1;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">HistoryCacheSize</span><span class="token operator">=</span>128M <span class="token comment"># &#x53EF;&#x6839;&#x64DA;&#x5BE6;&#x969B;&#x60C5;&#x6CC1;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">ValueCacheSize</span><span class="token operator">=</span>128M <span class="token comment"># &#x53EF;&#x6839;&#x64DA;&#x5BE6;&#x969B;&#x60C5;&#x6CC1;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">Timeout</span><span class="token operator">=</span><span class="token number">30</span> <span class="token comment"># &#x53EF;&#x6839;&#x64DA;&#x5BE6;&#x969B;&#x60C5;&#x6CC1;&#x4FEE;&#x6539;</span>
+<span class="token assign-left variable">TrapperTimeout</span><span class="token operator">=</span><span class="token number">300</span> <span class="token comment"># &#x6B64;&#x8655;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x6700;&#x5927;&#x57F7;&#x884C;&#x6642;&#x9577; (30s &#x4EE5;&#x5167;)</span>
+</pre><h4 class="mume-header" id="a-%E8%A8%AD%E7%BD%AE-php-for-zabbix-fronted">a. &#x8A2D;&#x7F6E; PHP for Zabbix fronted</h4>
+
+<p>&#x2003;&#x2003;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/php-fpm.d/zabbix.conf&#xFF0C;&#x53D6;&#x6D88;&#x4EE5;&#x4E0B;&#x8A3B;&#x89E3;&#x4E26;&#x4FEE;&#x6539;&#x6642;&#x5340;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token punctuation">;</span> php_value<span class="token punctuation">[</span>date.timezone<span class="token punctuation">]</span> <span class="token operator">=</span> Asia/Taipei
+</pre><h4 class="mume-header" id="b-%E9%87%8D%E5%95%9F-zabbix-server-and-agent-processes">b. &#x91CD;&#x555F; Zabbix server and agent processes</h4>
+
+<pre data-role="codeBlock" data-info class="language-"><code>systemctl restart zabbix-server zabbix-agent httpd php-fpm
+systemctl enable zabbix-server zabbix-agent httpd php-fpm
+</code></pre><h3 class="mume-header" id="324-%E9%98%B2%E7%81%AB%E7%89%86%E5%92%8C%E6%AC%8A%E9%99%90%E9%85%8D%E7%BD%AE">3.2.4. &#x9632;&#x706B;&#x7246;&#x548C;&#x6B0A;&#x9650;&#x914D;&#x7F6E;</h3>
+
+<p>&#x2003;&#x2003;(1) &#x9632;&#x706B;&#x7246;&#x914D;&#x7F6E;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">firewall-cmd --add-port<span class="token operator">=</span><span class="token number">80</span>/tcp --permanent
+firewall-cmd --add-port<span class="token operator">=</span><span class="token number">10050</span>/tcp --permanent
+firewall-cmd --add-port<span class="token operator">=</span><span class="token number">10051</span>/tcp --permanent
+firewall-cmd --reload
+</pre><p>&#x2003;&#x2003;(2) php.ini &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8A2D;&#x7F6E;</p>
+<p>&#x2003;&#x2003;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/php.ini&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">date.timezone <span class="token operator">=</span> Asia/Taipei
+</pre><p>&#x2003;&#x2003;&#x91CD;&#x555F; httpd</p>
+<pre data-role="codeBlock" data-info class="language-"><code>systemctl restart httpd
+</code></pre><h3 class="mume-header" id="325-%E9%85%8D%E7%BD%AE-zabbix-web">3.2.5. &#x914D;&#x7F6E; Zabbix-Web</h3>
+
+<p>&#x2003;&#x2003;&#x9023;&#x7DDA;&#x81F3;: http://server_ip_or_name/zabbix&#x3002;</p>
+<p><img src="images\2.png" alt></p>
+<p>&#x2003;&#x2003;PHP &#x6AA2;&#x67E5;&#x9810;&#x5B89;&#x88DD;&#x5957;&#x4EF6;&#x3002;</p>
+<p><img src="images\3.png" alt></p>
+<p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x5404;&#x9805;&#x53C3;&#x6578;&#xFF0C;&#x5982;&#x679C;&#x8CC7;&#x6599;&#x5EAB;&#x4E0D;&#x5728;&#x672C;&#x5730;&#x7AEF;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x5176;&#x4ED6;&#x53F0;&#x4F3A;&#x670D;&#x5668;&#x4E0A;&#xFF0C;&#x9023;&#x7DDA;&#x4E4B;&#x524D;&#x8ACB;&#x78BA;&#x4FDD; MySQL port &#x6709;&#x6253;&#x958B;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x9023;&#x7DDA;&#x3002;</p>
+<p><img src="images\4.png" alt></p>
+<p>&#x2003;&#x2003;<strong>&#x6CE8;&#x610F;</strong>&#xFF0C;&#x5982;&#x679C; Zabbix-Server &#x5728;&#x5176;&#x4ED6;&#x53F0;&#x6A5F;&#x5668;&#x4E2D;&#xFF0C;&#x9019;&#x88E1;&#x7684; Host &#x5247;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x70BA; Zabbix-Server &#x7684; IP&#xFF0C;&#x4E26;&#x78BA;&#x4FDD; port &#x6709;&#x6253;&#x958B;&#xFF0C;&#x5F9E;&#x524D;&#x7AEF; PHP &#x9023;&#x5230; Zabbix-Server &#x7AEF;&#x53E3;&#x70BA; 10051&#x3002;</p>
+<p><img src="images\5.png" alt></p>
+<p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x5B8C;&#x6574;&#x8A0A;&#x606F;&#x6703;&#x88AB;&#x5BEB;&#x5165; /etc/zabbix/conf/zabbix.conf.php &#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p><img src="images\6.png" alt></p>
+<p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x6210;&#x529F;&#x3002;</p>
+<p><img src="images\7.png" alt></p>
+<p>&#x2003;&#x2003;Zabbix-Web &#x9023;&#x63A5;&#x8CC7;&#x6599;&#x5EAB;&#x548C; Zabbix-Server &#x7AEF;&#x53E3;&#x7684;&#x914D;&#x7F6E;&#x8A0A;&#x606F;&#x5982;&#x4E0B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="php" class="language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// Zabbix GUI configuration file.</span>
+
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;TYPE&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;MYSQL&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;SERVER&apos;</span><span class="token punctuation">]</span>                   <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;localhost&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;PORT&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;0&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;DATABASE&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;zabbix&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;USER&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;zabbix&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;PASSWORD&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;password&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Schema name. Used for PostgreSQL.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;SCHEMA&apos;</span><span class="token punctuation">]</span>                   <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Used for TLS connection.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;ENCRYPTION&apos;</span><span class="token punctuation">]</span>               <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;KEY_FILE&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CERT_FILE&apos;</span><span class="token punctuation">]</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CA_FILE&apos;</span><span class="token punctuation">]</span>                  <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;VERIFY_HOST&apos;</span><span class="token punctuation">]</span>              <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CIPHER_LIST&apos;</span><span class="token punctuation">]</span>              <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Use IEEE754 compatible value range for 64-bit Numeric (float) history values.</span>
+<span class="token comment">// This option is enabled by default for new Zabbix installations.</span>
+<span class="token comment">// For upgraded installations, please read database upgrade notes before enabling this option.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;DOUBLE_IEEE754&apos;</span><span class="token punctuation">]</span>   <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token variable">$ZBX_SERVER</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;localhost&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$ZBX_SERVER_PORT</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;10051&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$ZBX_SERVER_NAME</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+
+<span class="token variable">$IMAGE_FORMAT_DEFAULT</span>   <span class="token operator">=</span> <span class="token constant">IMAGE_FORMAT_PNG</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Uncomment this block only if you are using Elasticsearch.</span>
+<span class="token comment">// Elasticsearch url (can be string if same url is used for all types).</span>
+<span class="token comment">//$HISTORY[&apos;url&apos;] = [</span>
+<span class="token comment">//      &apos;uint&apos; =&gt; &apos;http://localhost:9200&apos;,</span>
+<span class="token comment">//      &apos;text&apos; =&gt; &apos;http://localhost:9200&apos;</span>
+<span class="token comment">//];</span>
+<span class="token comment">// Value types stored in Elasticsearch.</span>
+<span class="token comment">//$HISTORY[&apos;types&apos;] = [&apos;uint&apos;, &apos;text&apos;];</span>
+
+<span class="token comment">// Used for SAML authentication.</span>
+<span class="token comment">// Uncomment to override the default paths to SP private key, SP and IdP X.509 certificates, and to set extra settings.</span>
+<span class="token comment">// $SSO[&apos;SP_KEY&apos;]                  = &apos;conf/certs/sp.key&apos;;</span>
+<span class="token comment">//$SSO[&apos;SP_CERT&apos;]                  = &apos;conf/certs/sp.crt&apos;;</span>
+<span class="token comment">//$SSO[&apos;IDP_CERT&apos;]                 = &apos;conf/certs/idp.crt&apos;;</span>
+<span class="token comment">//$SSO[&apos;SETTINGS&apos;]                 = [];</span>
+</pre><p>&#x2003;&#x2003;&#x767B;&#x5165;&#x9801;&#x9762;&#xFF0C;&#x9ED8;&#x8A8D;&#x5E33;&#x6236;&#x662F; Admin&#xFF0C;&#x5BC6;&#x78BC;&#x70BA; zabbix&#x3002;</p>
+<p><img src="images\8.png" alt></p>
+<p>&#x2003;&#x2003;&#x767B;&#x5165;&#x5F8C;&#x9801;&#x9762;&#x3002;</p>
+<p><img src="images\9.png" alt></p>
+<p>&#x2003;&#x2003;(1) /etc/zabbix/zabbix_server.conf &#x4E2D;&#x7684;&#x53C3;&#x6578;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token assign-left variable">DBHost</span><span class="token operator">=</span>localhost    <span class="token comment"># &#x8CC7;&#x6599;&#x5EAB; IP&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x672C;&#x6A5F;&#x4E2D;&#xFF0C;&#x4FEE;&#x6539;&#x5BE6;&#x969B; IP</span>
+<span class="token assign-left variable">DBName</span><span class="token operator">=</span>zabbix       <span class="token comment"># &#x8CC7;&#x6599;&#x5EAB;&#x540D;&#x7A31;</span>
+<span class="token assign-left variable">DBUser</span><span class="token operator">=</span>zabbix       <span class="token comment"># &#x8CC7;&#x6599;&#x5EAB;&#x7528;&#x6236;</span>
+<span class="token assign-left variable">DBPassword</span><span class="token operator">=</span>password <span class="token comment"># &#x8CC7;&#x6599;&#x5EAB;&#x5BC6;&#x78BC;</span>
+</pre><p>&#x2003;&#x2003;Zabbix &#x53EF;&#x5728; Administration =&gt; Users =&gt; User name =&gt; Languages &#x4FEE;&#x6539;&#x8A9E;&#x8A00;&#x3002;</p>
+<p><img src="images\10.png" alt></p>
+<p>&#x2003;&#x2003;&#x958B;&#x555F;&#x544A;&#x8B66;&#x63D0;&#x793A;&#x8A0A;&#x606F;&#x548C;&#x524D;&#x7AEF;&#x6D88;&#x606F;&#x7684;&#x8072;&#x97F3;&#x63D0;&#x793A;&#x3002;</p>
+<p><img src="images\11.png" alt></p>
+<p>&#x2003;&#x2003;&#x7981;&#x7528; Guests &#x7D44;&#xFF0C;&#x9632;&#x6B62;&#x975E;&#x6388;&#x6B0A;&#x767B;&#x5165;&#x7528;&#x6236;&#x8A2A;&#x554F;&#x3002;</p>
+<p><img src="images\12.png" alt></p>
+<h3 class="mume-header" id="326-%E7%9B%B8%E9%97%9C%E6%95%85%E9%9A%9C%E8%99%95%E7%90%86">3.2.6 &#x76F8;&#x95DC;&#x6545;&#x969C;&#x8655;&#x7406;</h3>
+
+<p>&#x2003;&#x2003;<strong>&#x7B2C;&#x4E00;&#x7A2E;&#x60C5;&#x6CC1;</strong>&#xFF1A;&#x5728;&#x5176;&#x4ED6;&#x53C3;&#x6578; (iptables&#x3001;SELinux) &#x914D;&#x7F6E;&#x6B63;&#x78BA;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x5982;&#x679C; Web &#x4ECB;&#x9762;&#x63D0;&#x793A; Zabbix-Server &#x7121;&#x6CD5;&#x9023;&#x63A5;&#x6210;&#x529F;&#x7684;&#x8A0A;&#x606F;&#xFF0C;&#x5247;&#x9032;&#x5165; Zabbix-Server &#x7CFB;&#x7D71;&#x900F;&#x904E; Telnet &#x6E2C;&#x8A66;&#x3002;</p>
+<p><img src="images\13.png" alt></p>
+<p>&#x2003;&#x2003;&#x5047;&#x8A2D; 10.0.0.1 10051 &#x7AEF;&#x53E3;&#x662F;&#x4E0D;&#x901A;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/zabbix/web/zabbix.conf.php&#xFF0C;&#x4FEE;&#x6539; $DB[&apos;SERVER&apos;]&#x3002;</p>
+<pre data-role="codeBlock" data-info="php" class="language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// Zabbix GUI configuration file.</span>
+
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;TYPE&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;MYSQL&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;SERVER&apos;</span><span class="token punctuation">]</span>                   <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;localhost&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;PORT&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;0&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;DATABASE&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;zabbix&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;USER&apos;</span><span class="token punctuation">]</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;zabbix&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;PASSWORD&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;password&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Schema name. Used for PostgreSQL.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;SCHEMA&apos;</span><span class="token punctuation">]</span>                   <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Used for TLS connection.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;ENCRYPTION&apos;</span><span class="token punctuation">]</span>               <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;KEY_FILE&apos;</span><span class="token punctuation">]</span>                 <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CERT_FILE&apos;</span><span class="token punctuation">]</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CA_FILE&apos;</span><span class="token punctuation">]</span>                  <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;VERIFY_HOST&apos;</span><span class="token punctuation">]</span>              <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;CIPHER_LIST&apos;</span><span class="token punctuation">]</span>              <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Use IEEE754 compatible value range for 64-bit Numeric (float) history values.</span>
+<span class="token comment">// This option is enabled by default for new Zabbix installations.</span>
+<span class="token comment">// For upgraded installations, please read database upgrade notes before enabling this option.</span>
+<span class="token variable">$DB</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&apos;DOUBLE_IEEE754&apos;</span><span class="token punctuation">]</span>   <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token variable">$ZBX_SERVER</span>                     <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;localhost&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$ZBX_SERVER_PORT</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;10051&apos;</span><span class="token punctuation">;</span>
+<span class="token variable">$ZBX_SERVER_NAME</span>                <span class="token operator">=</span> <span class="token string single-quoted-string">&apos;&apos;</span><span class="token punctuation">;</span>
+</pre><p>&#x2003;&#x2003;<strong>&#x7B2C;&#x4E8C;&#x7A2E;&#x60C5;&#x6CC1;</strong>&#xFF1A;&#x8CC7;&#x6599;&#x5EAB;&#x6587;&#x4EF6; mysql.sock &#x7121;&#x6CD5;&#x627E;&#x5230;&#xFF0C;&#x63D0;&#x793A;&#x8A0A;&#x606F;&#x5982;&#x4E0B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">Database error: Error connecting to database <span class="token punctuation">[</span>Can&apos;t connect to <span class="token builtin class-name">local</span> MySQL server through socket /var/lib/mysql/mysql.sock<span class="token punctuation">]</span>
+</pre><p>&#x2003;&#x2003;&#x932F;&#x8AA4;&#x539F;&#x56E0;&#x662F;&#x56E0;&#x70BA; PHP &#x7121;&#x6CD5;&#x900F;&#x904E; Socket &#x9023;&#x63A5;&#x5230; MySQL&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">php -i <span class="token operator">|</span> <span class="token function">grep</span> sock
+
+<span class="token comment"># Response</span>
+mysqli.default_socket <span class="token operator">=</span><span class="token operator">&gt;</span> /var/lib/mysql/mysql.sock <span class="token operator">=</span><span class="token operator">&gt;</span> /var/lib/mysql/mysql.sock
+pdo_mysql.default_socket <span class="token operator">=</span><span class="token operator">&gt;</span> /var/lib/mysql/mysql.sock <span class="token operator">=</span><span class="token operator">&gt;</span> /var/lib/mysql/mysql.sock
+sockets
+default_socket_timeout <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">60</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">60</span>
+</pre><p>&#x2003;&#x2003;<strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x5728;&#x5C07; /etc/php.ini &#x4FEE;&#x6539; mysql.sock &#x7684;&#x8DEF;&#x5F91;&#x5F8C;&#xFF0C;&#x9808;&#x91CD;&#x555F; httpd &#x670D;&#x52D9;&#x3002;</p>
+<p>&#x2003;&#x2003;<strong>&#x7B2C;&#x4E09;&#x7A2E;&#x60C5;&#x6CC1;</strong>&#xFF1A;&#x8CC7;&#x6599;&#x5EAB;&#x9023;&#x63A5;&#x5931;&#x6557;&#x3002;&#x89E3;&#x6C7A;&#x601D;&#x8DEF;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;<br>
+&#x2003;&#x2003;(1) &#x6AA2;&#x67E5;&#x8CC7;&#x6599;&#x5EAB;&#x670D;&#x52D9;&#x662F;&#x5426;&#x6B63;&#x5E38;<br>
+&#x2003;&#x2003;(2) &#x6AA2;&#x67E5;&#x9632;&#x706B;&#x7246;&#x662F;&#x5426;&#x5141;&#x8A31;<br>
+&#x2003;&#x2003;(3) &#x6AA2;&#x67E5;&#x6B0A;&#x9650;&#x662F;&#x5426;&#x5141;&#x8A31;&#x8A2A;&#x554F;<br>
+&#x2003;&#x2003;(4) &#x6AA2;&#x67E5;&#x9023;&#x63A5; MySQL &#x662F;&#x5426;&#x51FA;&#x73FE;&#x554F;&#x984C;</p>
+<h3 class="mume-header" id="327-zabbix_server-%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%83%E6%95%B8">3.2.7 zabbix_server &#x7A0B;&#x5E8F;&#x7684;&#x53C3;&#x6578;</h3>
+
+<p>&#x2003;&#x2003;zabbix_server &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">usage:
+  zabbix_server <span class="token punctuation">[</span>-c config-file<span class="token punctuation">]</span>
+  zabbix_server <span class="token punctuation">[</span>-c config-file<span class="token punctuation">]</span> -R runtime-option
+  zabbix_server -h
+  zabbix_server -V
+
+The core daemon of Zabbix software.
+
+Options:
+  -c --config config-file        Path to the configuration <span class="token function">file</span>
+                                 <span class="token punctuation">(</span>default: <span class="token string">&quot;/etc/zabbix/zabbix_server.conf&quot;</span><span class="token punctuation">)</span>
+  -f --foreground                Run Zabbix server <span class="token keyword">in</span> foreground
+  -R --runtime-control runtime-option   Perform administrative functions
+
+    Runtime control options:
+      config_cache_reload        Reload configuration cache
+      housekeeper_execute        Execute the housekeeper
+      <span class="token assign-left variable">log_level_increase</span><span class="token operator">=</span>target  Increase log level, affects all processes <span class="token keyword">if</span>
+                                 target is not specified
+      <span class="token assign-left variable">log_level_decrease</span><span class="token operator">=</span>target  Decrease log level, affects all processes <span class="token keyword">if</span>
+                                 target is not specified
+      snmp_cache_reload          Reload SNMP cache
+      <span class="token assign-left variable">diaginfo</span><span class="token operator">=</span>section           Log internal diagnostic information of the
+                                 section <span class="token punctuation">(</span>historycache, preprocessing, alerting,
+                                 lld, valuecache, locks<span class="token punctuation">)</span> or everything <span class="token keyword">if</span> section is
+                                 not specified
+
+      Log level control targets:
+        process-type             All processes of specified <span class="token builtin class-name">type</span>
+                                 <span class="token punctuation">(</span>alerter, alert manager, configuration syncer,
+                                 discoverer, escalator, <span class="token function">history</span> syncer,
+                                 housekeeper, http poller, icmp pinger,
+                                 ipmi manager, ipmi poller, java poller,
+                                 poller, preprocessing manager,
+                                 preprocessing worker, proxy poller,
+                                 self-monitoring, snmp trapper, task manager,
+                                 timer, trapper, unreachable poller,
+                                 vmware collector<span class="token punctuation">)</span>
+        process-type,N           Process <span class="token builtin class-name">type</span> and number <span class="token punctuation">(</span>e.g., poller,3<span class="token punctuation">)</span>
+        pid                      Process identifier, up to <span class="token number">65535</span>. For larger
+                                 values specify target as <span class="token string">&quot;process-type,N&quot;</span>
+
+  -h --help                      Display this <span class="token builtin class-name">help</span> message
+  -V --version                   Display version number
+
+Some configuration parameter default locations:
+  AlertScriptsPath               <span class="token string">&quot;/usr/share/zabbix/alertscripts&quot;</span>
+  ExternalScripts                <span class="token string">&quot;/usr/share/zabbix/externalscripts&quot;</span>
+  SSLCertLocation                <span class="token string">&quot;/usr/share/zabbix/ssl/certs&quot;</span>
+  SSLKeyLocation                 <span class="token string">&quot;/usr/share/zabbix/ssl/keys&quot;</span>
+  LoadModulePath                 <span class="token string">&quot;/usr/lib64/zabbix/modules&quot;</span>
+
+Report bugs to: <span class="token operator">&lt;</span>https://support.zabbix.com<span class="token operator">&gt;</span>
+Zabbix home page: <span class="token operator">&lt;</span>http://www.zabbix.com<span class="token operator">&gt;</span>
+Documentation: <span class="token operator">&lt;</span>https://www.zabbix.com/documentation<span class="token operator">&gt;</span>
+</pre><p>&#x2003;&#x2003;&#x624B;&#x52D5;&#x57F7;&#x884C;&#x6E05;&#x7406;&#x5668; (Housekeeper)&#xFF0C;&#x53EF;&#x4EE5;&#x522A;&#x9664;&#x904E;&#x671F;&#x6578;&#x64DA;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">zabbix_server -R housekeeper_execute
+
+<span class="token comment"># Response</span>
+zabbix_server <span class="token punctuation">[</span><span class="token number">11830</span><span class="token punctuation">]</span>: <span class="token builtin class-name">command</span> sent successfully
+</pre><p>&#x2003;&#x2003;&#x5728;&#x7DDA;&#x57F7;&#x884C;&#x91CD;&#x8F09;&#x914D;&#x7F6E;&#x7DE9;&#x5B58;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">zabbix_server -R config_cache_reload
+
+<span class="token comment"># Response</span>
+zabbix_server <span class="token punctuation">[</span><span class="token number">11966</span><span class="token punctuation">]</span>: <span class="token builtin class-name">command</span> sent successfully
+</pre><h2 class="mume-header" id="33-zabbix-agent-%E5%AE%A2%E6%88%B6%E7%AB%AF%E7%9A%84%E5%AE%89%E8%A3%9D">3.3 Zabbix-Agent &#x5BA2;&#x6236;&#x7AEF;&#x7684;&#x5B89;&#x88DD;</h2>
+
+<h3 class="mume-header" id="331-%E5%AE%89%E8%A3%9D-zabbix-agent">3.3.1 &#x5B89;&#x88DD; Zabbix-Agent</h3>
+
+<p>&#x2003;&#x2003;Zabbix &#x5BA2;&#x6236;&#x7AEF;&#x7684;&#x63A1;&#x96C6;&#x65B9;&#x5F0F;&#x6709; Agent&#x3001;SNMP &#x7B49;&#xFF0C;&#x5728;&#x9019;&#x88E1;&#x6211;&#x5011;&#x5B78;&#x7FD2;&#x5982;&#x4F55;&#x5B89;&#x88DD; Agent&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">rpm</span> -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
+dnf clean all
+dnf <span class="token function">install</span> zabbix-agent
+</pre><h3 class="mume-header" id="332-%E9%98%B2%E7%81%AB%E7%89%86%E8%A8%AD%E7%BD%AE">3.3.2 &#x9632;&#x706B;&#x7246;&#x8A2D;&#x7F6E;</h3>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">firewall-cmd --add-port<span class="token operator">=</span><span class="token number">10050</span>/tcp --permanent
+firewall-cmd --reload
+</pre><h3 class="mume-header" id="333-%E9%85%8D%E7%BD%AE-zabbix_agentdconf">3.3.3 &#x914D;&#x7F6E; zabbix_agentd.conf</h3>
+
+<p>&#x2003;&#x2003;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/zabbix/zabbix_agentd.conf&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token assign-left variable">PidFile</span><span class="token operator">=</span>/var/run/zabbix/zabbix_agentd.pid  <span class="token comment"># pid &#x6587;&#x4EF6;&#x8DEF;&#x5F91;</span>
+<span class="token assign-left variable">LogFile</span><span class="token operator">=</span>/var/log/zabbix/zabbix_agentd.log  <span class="token comment"># log &#x6587;&#x4EF6;&#x8DEF;&#x5F91;</span>
+<span class="token assign-left variable">LogFileSize</span><span class="token operator">=</span><span class="token number">0</span>                              <span class="token comment"># log &#x5207;&#x5272;&#x5927;&#x5C0F;&#xFF0C;0 &#x4EE3;&#x8868;&#x4E0D;&#x5207;&#x5272;</span>
+<span class="token assign-left variable">Server</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1                           <span class="token comment"># &#x88AB;&#x52D5;&#x6A21;&#x5F0F;&#xFF0C;Zabbix-Server &#x7684; IP</span>
+<span class="token assign-left variable">ServerActive</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1                     <span class="token comment"># &#x4E3B;&#x52D5;&#x6A21;&#x5F0F;&#xFF0C;Zabbix-Server &#x7684; IP</span>
+<span class="token assign-left variable">Hostname</span><span class="token operator">=</span>Zabbix server                     <span class="token comment"># &#x672C;&#x6A5F;&#x7684; Hostname&#xFF0C;&#x4F7F;&#x7528;&#x4E3B;&#x52D5;&#x6A21;&#x5F0F;&#x5FC5;&#x9808;&#x914D;&#x7F6E;</span>
+<span class="token assign-left variable">Include</span><span class="token operator">=</span>/etc/zabbix/zabbix_agentd.d/*.conf <span class="token comment"># &#x5305;&#x542B;&#x5B50;&#x914D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;</span>
+<span class="token assign-left variable">UnsafeUserParameters</span><span class="token operator">=</span><span class="token number">1</span>                     <span class="token comment"># &#x555F;&#x7528;&#x7279;&#x6B8A;&#x5B57;&#x4E32;&#xFF0C;&#x7528;&#x65BC;&#x81EA;&#x5B9A;&#x7FA9;&#x76E3;&#x63A7;</span>
+</pre><ul>
+<li>Server&#xFF1A;&#x88AB;&#x52D5;&#x6A21;&#x5F0F;&#xFF0C;&#x5141;&#x8A31; zabbix-server &#x4F3A;&#x670D;&#x5668;&#x7AEF;&#x9023;&#x63A5;&#x5BA2;&#x6236;&#x7AEF;&#xFF0C;&#x6B64;&#x8655;&#x5141;&#x8A31;&#x672C;&#x6A5F;&#x548C; 192.168.2.34 &#x8A2A;&#x554F; 10050 &#x7AEF;&#x53E3;&#xFF0C;&#x591A;&#x500B; IP &#x7528;&#x9017;&#x865F;&#x9593;&#x9694;&#x3002;</li>
+<li>ServerActive&#xFF1A;&#x4E3B;&#x52D5;&#x6A21;&#x5F0F;&#xFF0C;&#x5411; zabbix-server &#x50B3;&#x8F38;&#x6578;&#x64DA;&#x3002;&#x9019;&#x7A2E;&#x6A21;&#x5F0F;&#x6027;&#x80FD;&#x8F03;&#x597D;&#xFF0C;<strong>&#x4F46;&#x9808;&#x78BA;&#x4FDD; Hostname &#x8207; Zabbix-Web &#x4E2D;&#x7684;&#x4E3B;&#x6A5F;&#x540D;&#x4E00;&#x81F4;</strong>&#xFF0C;&#x5426;&#x5247;&#x6703;&#x770B;&#x5230;&#x4EE5;&#x4E0B;&#x932F;&#x8AA4;&#x8A0A;&#x606F;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token number">4558</span>:20170805:100253.544 cannot send list of active checks to <span class="token string">&quot;10.0.2.30&quot;</span> <span class="token function">host</span> <span class="token punctuation">[</span>web-1<span class="token punctuation">]</span> not found
+</pre><p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x5B8C;&#x6210;&#x5F8C;&#xFF0C;&#x555F;&#x7528; Zabbix-Agent</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">systemctl <span class="token builtin class-name">enable</span> zabbix-agent
+systemctl start zabbix-agent
+</pre><h3 class="mume-header" id="34-snmp-%E7%9B%A3%E6%8E%A7%E9%85%8D%E7%BD%AE">3.4 SNMP &#x76E3;&#x63A7;&#x914D;&#x7F6E;</h3>
+
+<p>&#x2003;&#x2003;&#x7531;&#x65BC;&#x67D0;&#x4E9B;&#x8A2D;&#x5099;&#x4E0D;&#x80FD;&#x5B89;&#x88DD; Zabbix-Agent&#xFF0C;&#x53EF;&#x4EE5;&#x63A1;&#x7528; SNMP &#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x76E3;&#x63A7;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">dnf <span class="token function">install</span> net-snmp
+</pre><p>&#x2003;&#x2003;&#x7DE8;&#x8F2F;&#x6A94;&#x6848; /etc/snmp/snmpd.conf</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">com2sec mynetwork <span class="token number">192.168</span>.0.240 public_monitor
+com2sec mynetwork <span class="token number">127.0</span>.0.1 public
+group MyROGroup v2c mynetwork
+access MyROGroup <span class="token string">&quot;&quot;</span> any noauth prefix all none none
+view all included .1 <span class="token number">80</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">systemctl <span class="token builtin class-name">enable</span> snmpd
+systemctl start snmpd
+</pre><h2 class="mume-header" id="35-windows-%E4%B8%AD%E5%AE%89%E8%A3%9D-zabbix-agent">3.5 Windows &#x4E2D;&#x5B89;&#x88DD; Zabbix-Agent</h2>
+
+<h3 class="mume-header" id="351-%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE">3.5.1 &#x5B89;&#x88DD;&#x8207;&#x914D;&#x7F6E;</h3>
+
+<p>&#x2003;&#x2003;<a href="https://www.zabbix.com/download_agents?version=5.0+LTS&amp;release=5.0.12&amp;os=Windows&amp;os_version=Any&amp;hardware=amd64&amp;encryption=OpenSSL&amp;packaging=MSI&amp;show_legacy=0">Zabbix Agent Download</a>&#xFF0C;&#x627E;&#x5230;&#x76F8;&#x5C0D;&#x61C9;&#x7248;&#x672C;&#x4E0B;&#x8F09;&#x5F8C;&#xFF0C;&#x89E3;&#x58D3;&#x7E2E;&#x5F8C;&#x57F7;&#x884C;&#x3002;</p>
+<h3 class="mume-header" id="352-%E8%A8%BB%E5%86%8A%E6%9C%8D%E5%8B%99">3.5.2 &#x8A3B;&#x518A;&#x670D;&#x52D9;</h3>
+
+<p>&#x2003;&#x2003;&#x5728; cmd &#x5207;&#x63DB;&#x5230; zabbix_agentd.exe &#x7684;&#x8DEF;&#x5F91;&#x4E0B;&#xFF0C;&#x57F7;&#x884C;&#x6307;&#x4EE4;&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">cmd<span class="token operator">&gt;</span>zabbix_agentd.exe --intstall -c <span class="token string">&quot;c\Progrm Files\zabbix_agents_5.0.12.win<span class="token entity" title="\c">\c</span>onf\zabbix_agentd.win.conf&quot;</span>
+</pre><p>&#x2003;&#x2003;&#x5728; windows &#x4E2D;&#x958B;&#x555F;&#x670D;&#x52D9;&#xFF0C;&#x9EDE;&#x9078; Zabbix Agent &#x53F3;&#x9375;&#x555F;&#x52D5;&#x3002;</p>
+<h2 class="mume-header" id="36-%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%9D-zabbix-agent">3.6 &#x5176;&#x4ED6;&#x5E73;&#x53F0;&#x5B89;&#x88DD; Zabbix-Agent</h2>
+
+<p>&#x2003;&#x2003;<a href="https://www.zabbix.com/download_agents?version=5.0+LTS&amp;release=5.0.12&amp;os=Windows&amp;os_version=Any&amp;hardware=amd64&amp;encryption=OpenSSL&amp;packaging=MSI&amp;show_legacy=0">Zabbix Agent Download</a>&#xFF0C;&#x627E;&#x5230;&#x76F8;&#x5C0D;&#x61C9;&#x7248;&#x672C;&#x4E0B;&#x8F09;&#x5F8C;&#xFF0C;&#x89E3;&#x58D3;&#x7E2E;&#x5F8C;&#x57F7;&#x884C;&#x3002;</p>
+<h2 class="mume-header" id="37-zabbix-get-%E4%BD%BF%E7%94%A8">3.7 Zabbix-Get &#x4F7F;&#x7528;</h2>
+
+<p>&#x2003;&#x2003;&#x5B89;&#x88DD; zabbix-get&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">dnf <span class="token function">install</span> zabbix-get
+</pre><p>&#x2003;&#x2003;&#x5176;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">zabbix_get <span class="token punctuation">[</span>-hV<span class="token punctuation">]</span> -s <span class="token operator">&lt;</span>host name or IP<span class="token operator">&gt;</span> <span class="token punctuation">[</span>-p <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-I <span class="token operator">&lt;</span>IP address<span class="token operator">&gt;</span><span class="token punctuation">]</span> -k <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span>
+</pre><p>&#x2003;&#x2003;-s&#xFF1A;&#x9060;&#x7AEF; Zabbix-Agent &#x7684; IP or &#x4E3B;&#x6A5F;&#x540D;&#x3002;<br>
+&#x2003;&#x2003;-p&#xFF1A;&#x9060;&#x7AEF; Zabbix-Agent &#x7684;&#x7AEF;&#x53E3;&#x3002;<br>
+&#x2003;&#x2003;-I&#xFF1A;&#x672C;&#x6A5F;&#x7684;&#x51FA;&#x53E3; IP&#xFF0C;&#x7528;&#x65BC;&#x4E00;&#x53F0;&#x6A5F;&#x5668;&#x4E2D;&#x6709;&#x591A;&#x500B;&#x7DB2;&#x5361;&#x7684;&#x60C5;&#x6CC1;&#x3002;<br>
+&#x2003;&#x2003;-k&#xFF1A;&#x7372;&#x53D6;&#x9060;&#x7AEF; Zabbix-Agent &#x6578;&#x64DA;&#x6240;&#x4F7F;&#x7528;&#x7684; key&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7BC4;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">zabbix_get -s <span class="token number">127.0</span>.0.1 -k system.uname
+
+<span class="token comment"># Response</span>
+Linux zabbix <span class="token number">4.18</span>.0-240.22.1.el8_3.x86_64 <span class="token comment">#1 SMP Thu Apr 8 19:01:30 UTC 2021 x86_64</span>
+</pre><h2 class="mume-header" id="38-zabbix-%E7%9B%B8%E9%97%9C%E8%A1%93%E8%AA%9E-%E6%8C%87%E4%BB%A4">3.8 Zabbix &#x76F8;&#x95DC;&#x8853;&#x8A9E; (&#x6307;&#x4EE4;)</h2>
+
+<p>&#x2003;&#x2003;<strong>1. zabbix_server</strong><br>
+&#x2003;&#x2003;zabbix_server &#x662F; Zabbix &#x4F3A;&#x670D;&#x5668;&#x7AEF;&#x7684;&#x6838;&#x5FC3;&#x7A0B;&#x5E8F;&#x3002;<br>
+&#x2003;&#x2003;<strong>2. zabbix_proxy</strong><br>
+&#x2003;&#x2003;zabbix_proxy &#x662F; Zabbix &#x4EE3;&#x7406;&#x670D;&#x52D9;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x5728;&#x5206;&#x6563;&#x5F0F;&#x76E3;&#x63A7; Proxy &#x6A21;&#x5F0F;&#x4E2D;&#x3002;<br>
+&#x2003;&#x2003;<strong>3. zabbix_agentd</strong><br>
+&#x2003;&#x2003;zabbix_agentd &#x662F;&#x4EE5;&#x7368;&#x7ACB;&#x9032;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x555F;&#x52D5;&#x7684;&#xFF0C;&#x5176;&#x5C0D;&#x61C9;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x70BA; zabbix_agentd.conf&#x3002;<br>
+&#x2003;&#x2003;<strong>4. zabbix_java_gateway</strong><br>
+&#x2003;&#x2003;&#x9019;&#x662F; Zabbix &#x7684; Java &#x63A1;&#x96C6;&#x4F3A;&#x670D;&#x5668;&#x7AEF;&#xFF0C;&#x7528;&#x5728; JMX &#x76E3;&#x63A7;&#x65B9;&#x5F0F;&#x4E2D;&#x3002;<br>
+&#x2003;&#x2003;<strong>5. zabbix_sender</strong><br>
+&#x2003;&#x2003;&#x9019;&#x662F; Zabbix &#x7684; Trapping &#x6A21;&#x5F0F;&#xFF0C;&#x5C07;&#x63A1;&#x96C6;&#x5230;&#x7684;&#x6578;&#x64DA;&#x900F;&#x904E;&#x5B9A;&#x6642;&#x4EFB;&#x52D9;&#x4E3B;&#x52D5;&#x767C;&#x9001;&#x7D66; zabbix_server&#x3002;<br>
+&#x2003;&#x2003;<strong>6. zabbix_get</strong><br>
+&#x2003;&#x2003;zabbix_get &#x662F;&#x4E00;&#x500B;&#x6578;&#x64DA;&#x7372;&#x53D6;&#x6E2C;&#x8A66;&#x547D;&#x4EE4;&#xFF0C;&#x76F8;&#x7576;&#x65BC; SNMP &#x4E2D;&#x7684; snmpwalk&#x3002;</p>
+<h2 class="mume-header" id="39-zabbix-server-%E5%B0%8D%E6%95%B8%E6%93%9A%E7%9A%84%E5%AD%98%E5%84%B2">3.9 Zabbix-Server &#x5C0D;&#x6578;&#x64DA;&#x7684;&#x5B58;&#x5132;</h2>
+
+<p>&#x2003;&#x2003;&#x7121;&#x8AD6;&#x76E3;&#x63A7;&#x7CFB;&#x7D71;&#x63A1;&#x7528;&#x4F55;&#x7A2E;&#x67B6;&#x69CB;&#xFF0C;&#x6216;&#x662F;&#x662F;&#x5426;&#x4F7F;&#x7528; Proxy&#xFF0C;&#x5C0D;&#x65BC; Zabbix-Server &#x4F86;&#x8AAA;&#xFF0C;&#x6578;&#x64DA;&#x5B58;&#x5132;&#x662F;&#x4E00;&#x500B;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6311;&#x6230;&#x3002;&#x901A;&#x5E38;&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x662F;&#x5206;&#x6563;&#x5F0F;&#x67B6;&#x69CB;&#xFF0C;&#x4E26;&#x8B93;&#x5BA2;&#x6236;&#x7AEF;&#x8655;&#x65BC;&#x4E3B;&#x52D5;&#x6A21;&#x5F0F;&#xFF0C;&#x6703;&#x63D0;&#x9AD8; Zabbix-Server &#x7684;&#x6027;&#x80FD;&#x3002;&#x5728;&#x9019;&#x88E1;&#x8981;&#x4ECB;&#x7D39;&#x5982;&#x4F55;&#x5C0D; Zabbix-Server &#x7AEF;&#x6578;&#x64DA;&#x7684;&#x5B58;&#x5132;&#x9032;&#x884C;&#x512A;&#x5316;&#x3002;&#x9019;&#x88E1;&#x63A1;&#x7528;<strong>&#x8868;&#x5206;&#x5340;&#x7684;&#x65B9;&#x5F0F;</strong>&#x5C0D;&#x8CC7;&#x6599;&#x5EAB;&#x9032;&#x884C;&#x512A;&#x5316;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x5206;&#x6563;&#x5F0F;&#x67B6;&#x69CB;&#x3001;Elasticsearch &#x641C;&#x7D22;&#x5F15;&#x64CE;&#x8CC7;&#x6599;&#x5EAB;&#x4F86;&#x63D0;&#x9AD8;&#x8CC7;&#x6599;&#x5EAB;&#x6027;&#x80FD;&#x3002;</p>
+<h3 class="mume-header" id="391-%E7%9B%A3%E6%8E%A7%E6%95%B8%E6%93%9A%E5%AD%98%E5%84%B2">3.9.1 &#x76E3;&#x63A7;&#x6578;&#x64DA;&#x5B58;&#x5132;</h3>
+
+<p>&#x2003;&#x2003;Zabbix-Server &#x5C07;&#x63A1;&#x96C6;&#x5230;&#x7684;&#x6578;&#x64DA;&#x5B58;&#x5132;&#x5728;&#x8CC7;&#x6599;&#x5EAB;&#x4E2D;&#xFF0C;&#x4E5F;&#x4E86;&#x89E3;&#x5B58;&#x5132;&#x5927;&#x5C0F;&#x8207;&#x6BCF;&#x79D2;&#x8655;&#x7406;&#x7684;&#x6578;&#x64DA;&#x91CF;&#x6709;&#x95DC;&#xFF0C;&#x6240;&#x4EE5;&#x8CC7;&#x6599;&#x5EAB;&#x5B58;&#x5132;&#x53D6;&#x6C7A;&#x65BC;&#x4EE5;&#x4E0B;&#x5169;&#x9EDE;&#x56E0;&#x7D20;&#x3002;</p>
+<ul>
+<li><strong>New values per second</strong> (&#x6BCF;&#x79D2;&#x8655;&#x7406;&#x7684;&#x6578;&#x64DA;&#x503C;)&#xFF1A;Zabbix-Server &#x5F9E;&#x5BA2;&#x6236;&#x7AEF;&#x6BCF;&#x79D2;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6578;&#x64DA;&#x3002;</li>
+<li><strong>Housekeeper</strong> &#x7684;&#x8A2D;&#x7F6E;&#xFF1A;&#x5C0D;&#x65BC;&#x8D85;&#x904E;&#x5B58;&#x5132;&#x671F;&#x9650;&#x6578;&#x64DA;&#x7684;&#x522A;&#x9664;&#x7B56;&#x7565;&#x3002;</li>
+</ul>
+<p>&#x2003;&#x2003;Zabbix-Server &#x5C07;&#x63A1;&#x96C6;&#x5230;&#x7684;&#x6578;&#x64DA;&#x5B58;&#x5132;&#x65BC;<strong>&#x6B77;&#x53F2;&#x8868;</strong>&#x548C;<strong>&#x8DA8;&#x52E2;&#x8868;</strong>&#x4E2D;&#xFF0C;&#x5C0D;&#x65BC;&#x4E0D;&#x540C;&#x985E;&#x578B;&#x7684;&#x6578;&#x64DA;&#xFF0C;&#x5247;&#x5206;&#x5225;&#x5B58;&#x5132;&#x65BC;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x4E2D;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7DE8;&#x865F;</th>
+<th style="text-align:left">Table</th>
+<th style="text-align:left">&#x6578;&#x64DA;&#x985E;&#x578B;</th>
+<th style="text-align:left">&#x6578;&#x64DA;&#x578B;&#x614B;</th>
+<th style="text-align:left">&#x6578;&#x64DA;&#x7BC4;&#x570D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(1)</td>
+<td style="text-align:left">history</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x6B77;&#x53F2;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x6578;&#x5B57; (&#x6D6E;&#x9EDE;&#x6578;)</td>
+<td style="text-align:left">double(16, 4)~999999999999.9999</td>
+</tr>
+<tr>
+<td style="text-align:left">(2)</td>
+<td style="text-align:left">history_uint</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x6B77;&#x53F2;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x6578;&#x5B57; (&#x7121;&#x7B26;&#x865F;&#x6574;&#x6578;)</td>
+<td style="text-align:left">bigint(20) - 2<sup>64</sup> + 1</td>
+</tr>
+<tr>
+<td style="text-align:left">(3)</td>
+<td style="text-align:left">history_str</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x77ED;&#x7684;&#x5B57;&#x4E32;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x5B57;&#x4E32;</td>
+<td style="text-align:left">varchar(255)~255</td>
+</tr>
+<tr>
+<td style="text-align:left">(4)</td>
+<td style="text-align:left">history_text</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x9577;&#x7684;&#x5B57;&#x4E32;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x6587;&#x672C;</td>
+<td style="text-align:left">text~65535</td>
+</tr>
+<tr>
+<td style="text-align:left">(5)</td>
+<td style="text-align:left">history_log</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x65E5;&#x8A8C;&#x5B57;&#x4E32;</td>
+<td style="text-align:left">&#x65E5;&#x8A8C;</td>
+<td style="text-align:left">text~65535</td>
+</tr>
+<tr>
+<td style="text-align:left">(6)</td>
+<td style="text-align:left">trends</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x8DA8;&#x52E2;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x6578;&#x5B57; (&#x6D6E;&#x9EDE;&#x6578;)</td>
+<td style="text-align:left">double(16, 4)~999999999999.9999</td>
+</tr>
+<tr>
+<td style="text-align:left">(7)</td>
+<td style="text-align:left">trends_uint</td>
+<td style="text-align:left">&#x5B58;&#x5132;&#x8DA8;&#x52E2;&#x6578;&#x64DA;</td>
+<td style="text-align:left">&#x6578;&#x5B57; (&#x7121;&#x7B26;&#x865F;&#x6574;&#x6578;)</td>
+<td style="text-align:left">bigint(20) - 2<sup>64</sup> + 1</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x6B77;&#x53F2;&#x8868;&#x5B58;&#x5132;&#x5728;&#x6BCF;&#x500B;&#x63A1;&#x96C6;&#x9031;&#x671F;&#x5167;&#x6536;&#x96C6;&#x5230;&#x7684;&#x5168;&#x90E8;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#xFF1B;&#x8DA8;&#x52E2;&#x8868;&#x5B58;&#x5132;&#x7D93;&#x904E;&#x805A;&#x5408;&#x5F8C;&#x7684;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#xFF0C;&#x5C07;&#x6BCF;&#x500B;&#x63A1;&#x96C6;&#x9031;&#x671F;&#x7684;&#x6578;&#x64DA;&#x5408;&#x4F75;&#x6210;<strong>&#x6BCF;&#x5C0F;&#x6642;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x3001;&#x6700;&#x5927;&#x503C;&#x548C;&#x5E73;&#x5747;&#x503C;</strong>&#x3002;&#x6BD4;&#x5982;&#x76E3;&#x63A7;&#x9805;&#x6BCF;&#x79D2;&#x63A1;&#x96C6; 1 &#x500B;&#x6578;&#x64DA;&#xFF0C;1 &#x5C0F;&#x6642;&#x5247;&#x5B58;&#x5132;&#x6B77;&#x53F2;&#x6578;&#x64DA; 60 &#x689D;&#x7D00;&#x9304;&#xFF0C;&#x5B58;&#x5132;&#x8DA8;&#x52E2;&#x6578;&#x64DA; 1 &#x689D;&#x7D00;&#x9304;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6B77;&#x53F2;&#x8868;&#x7D50;&#x69CB;&#x5716;&#x5982;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6BCF;&#x500B;&#x8868;&#x90FD;&#x6709; &quot;&#x6642;&#x9593;-&#x503C;&quot; &#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5373;&#x76E3;&#x63A7;&#x6578;&#x64DA;&#x5B58;&#x5132;&#x7684;&#x662F;&#x4E00;&#x500B;&#x6642;&#x9593;&#x5E8F;&#x5217;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x767B;&#x5165; MySQL&#x3002;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">mysql -uroot -p
+</pre><p>&#x2003;&#x2003;&#x67E5;&#x770B;&#x6240;&#x6709; databases&#xFF0C;&#x4E26;&#x4F7F;&#x7528; zabbix database&#x3002;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span><span class="token punctuation">(</span>none<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> zabbix             <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.001</span> sec<span class="token punctuation">)</span>
+
+MariaDB <span class="token punctuation">[</span><span class="token punctuation">(</span>none<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">use</span> zabbix<span class="token punctuation">;</span>
+Reading <span class="token keyword">table</span> information <span class="token keyword">for</span> completion <span class="token keyword">of</span> <span class="token keyword">table</span> <span class="token operator">and</span> <span class="token keyword">column</span> names
+You can turn <span class="token keyword">off</span> this feature <span class="token keyword">to</span> get a quicker startup <span class="token keyword">with</span> <span class="token operator">-</span>A
+
+<span class="token keyword">Database</span> changed
+</pre><p>&#x2003;&#x2003;<strong>(1) history</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> history<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>   <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                               <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> history <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>history<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">value</span><span class="token punctuation">`</span> <span class="token keyword">double</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>ns<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>history_1<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.001</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;<strong>(2) history_uint</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> history_uint<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>        <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                                      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> history_uint <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>history_uint<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">value</span><span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>ns<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>history_uint_1<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.000</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;<strong>(3) history_str</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> history_str<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>       <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                                               <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> history_str <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>history_str<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">value</span><span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">COLLATE</span> utf8_bin <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>ns<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>history_str_1<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.001</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;<strong>(4) history_text</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> history_text<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>        <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                              <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> history_text <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>history_text<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">value</span><span class="token punctuation">`</span> <span class="token keyword">text</span> <span class="token keyword">COLLATE</span> utf8_bin <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>ns<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>history_text_1<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.000</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;<strong>(5) history_log</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> history_log<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>       <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> history_log <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>history_log<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">timestamp</span><span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>source<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token keyword">COLLATE</span> utf8_bin <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>severity<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span><span class="token keyword">value</span><span class="token punctuation">`</span> <span class="token keyword">text</span> <span class="token keyword">COLLATE</span> utf8_bin <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>logeventid<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>ns<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>history_log_1<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.000</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;&#x8DA8;&#x52E2;&#x8868;&#x4E2D;&#x90FD;&#x5305;&#x542B;&#x6700;&#x5C0F;&#x503C;&#x3001;&#x6700;&#x5927;&#x503C;&#x548C;&#x5E73;&#x5747;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;<strong>(6) trends</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> trends<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>  <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                                                                                                 <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> trends <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>trends<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>num<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_min<span class="token punctuation">`</span> <span class="token keyword">double</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_avg<span class="token punctuation">`</span> <span class="token keyword">double</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_max<span class="token punctuation">`</span> <span class="token keyword">double</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.001</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;<strong>(7) trends_uint</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> trends_uint<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Table</span>       <span class="token operator">|</span> <span class="token keyword">Create</span> <span class="token keyword">Table</span>                                                                                                                                                                                                                                                                                                                                                                                             <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token operator">|</span> trends_uint <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>trends_uint<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>itemid<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>clock<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>num<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_min<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_avg<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>value_max<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">unsigned</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>itemid<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>clock<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COLLATE</span><span class="token operator">=</span>utf8_bin <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.000</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;&#x5C0D;&#x65BC;<strong>&#x8D85;&#x904E;&#x5B58;&#x5132;&#x671F;&#x9650;&#x7684;&#x6578;&#x64DA;&#xFF0C;Zabbix-Server &#x4F7F;&#x7528; Housekeeper &#x9032;&#x7A0B;&#x9032;&#x884C;&#x6578;&#x64DA;&#x6E05;&#x7406;</strong>&#x3002;&#x5F9E;&#x6E90;&#x78BC;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5176;&#x522A;&#x9664;&#x6A5F;&#x5236;&#x900F;&#x904E; housekeeping_history_and_trends &#x51FD;&#x6578;&#x5BE6;&#x73FE;&#xFF0C;&#x6838;&#x5FC3;&#x522A;&#x9664; SQL &#x7684;&#x8A9E;&#x6CD5;&#x70BA;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token string">&quot;delete from %s where itemid=&quot;</span>ZBX_FS_UI64<span class="token string">&quot; and clock&lt;%d&quot;</span>&#x3002;
+</pre><p>&#x2003;&#x2003;Zabbix-Server &#x5C0D;<strong>&#x6578;&#x64DA;&#x6E05;&#x7406;&#x662F;&#x900F;&#x904E; DELETE &#x4F86;&#x57F7;&#x884C;&#x522A;&#x9664;&#x52D5;&#x4F5C;</strong>&#xFF0C;<strong>&#x5982;&#x679C;&#x6578;&#x64DA;&#x5B58;&#x5132;&#x589E;&#x591A;&#xFF0C;&#x5176;&#x57F7;&#x884C;&#x6548;&#x7387;&#x4E5F;&#x6703;&#x986F;&#x8457;&#x4E0B;&#x964D;</strong>&#xFF0C;&#x5728;&#x6709;&#x5343;&#x842C;&#x3001;&#x5104;&#x842C;&#x689D;&#x6578;&#x64DA;&#x57F7;&#x884C; DELETE SQL &#x8A9E;&#x6CD5;&#x5C11;&#x5247;&#x6578;&#x79D2;&#xFF0C;&#x9577;&#x5247;&#x6578;&#x5341;&#x5206;&#x9418;&#x624D;&#x80FD;&#x57F7;&#x884C;&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5; Housekeeper &#x57F7;&#x884C; &#x6703;&#x5F71;&#x97FF;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5C0E;&#x81F4;&#x8CC7;&#x6599;&#x5EAB;&#x70BA;&#x6574;&#x500B;&#x76E3;&#x63A7;&#x7CFB;&#x7D71;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9838;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5C0D;&#x65BC;&#x8A18;&#x9304;&#x689D;&#x6A39;&#x5F88;&#x591A;&#x7684;&#x8868;&#xFF0C;&#x5728; SQL &#x512A;&#x5316;&#x65B9;&#x6848;&#x6700;&#x5E38;&#x898B;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x6A6B;&#x5411;&#x64F4;&#x5C55;&#x548C;&#x7E31;&#x5411;&#x64F4;&#x5C55;&#x3002;&#x524D;&#x8005;&#x662F;&#x7528;&#x8DB3;&#x5920;&#x597D;&#x7684;&#x786C;&#x9AD4;&#xFF0C;&#x5F8C;&#x8005;&#x662F;&#x5C07;&#x6578;&#x64DA;&#x9032;&#x884C;&#x5206;&#x6563;&#x5F0F;&#x5B58;&#x5132;&#x3002;&#x800C;<strong>&#x5206;&#x8868;</strong>&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x5206;&#x6563;&#x5F0F;&#x7684;&#x4E00;&#x7A2E;&#xFF0C;&#x5373;&#x6309;&#x4E00;&#x5B9A;&#x7684;&#x898F;&#x5247;&#x5C07;&#x6578;&#x64DA;&#x5283;&#x5206;&#x5340;&#x9593;&#xFF0C;&#x5F9E;&#x800C;&#x907F;&#x514D;&#x5168;&#x8868;&#x6383;&#x63CF;&#x6240;&#x5E36;&#x4F86;&#x7684;&#x6027;&#x80FD;&#x640D;&#x5931;&#xFF0C;&#x9019;&#x6A23;&#x5C31;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x5728;&#x9019;&#x6211;&#x5011;<strong>&#x63A1;&#x7528;&#x8868;&#x5340;&#x9593;&#x9032;&#x884C;&#x5283;&#x5206;</strong>&#x4F86;&#x512A;&#x5316;&#x8CC7;&#x6599;&#x5EAB;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x900F;&#x904E;&#x4EE5;&#x4E0B;&#x8A9E;&#x6CD5;&#x53EF;&#x4EE5;&#x67E5;&#x770B; Zabbix &#x8CC7;&#x6599;&#x5EAB;&#x4E2D;&#x7684;&#x6B77;&#x53F2;&#x8868;&#x6578;&#x64DA;&#x91CF;&#x5927;&#x5C0F;&#x3002;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql">MariaDB <span class="token punctuation">[</span>zabbix<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">select</span> table_name<span class="token punctuation">,</span> <span class="token punctuation">(</span>data_length<span class="token operator">+</span>index_length<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">1024</span><span class="token operator">/</span><span class="token number">1024</span> <span class="token keyword">as</span> total_mb<span class="token punctuation">,</span> table_rows <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> <span class="token keyword">where</span> table_schema<span class="token operator">=</span><span class="token string">&apos;zabbix&apos;</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------------------------+--------------+------------+</span>
+<span class="token operator">|</span> table_name                 <span class="token operator">|</span> total_mb     <span class="token operator">|</span> table_rows <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------------------+--------------+------------+</span>
+<span class="token operator">|</span> acknowledges               <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> actions                    <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> alerts                     <span class="token operator">|</span>   <span class="token number">0.14062500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> application_discovery      <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>         <span class="token number">71</span> <span class="token operator">|</span>
+<span class="token operator">|</span> application_prototype      <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">212</span> <span class="token operator">|</span>
+<span class="token operator">|</span> application_template       <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">209</span> <span class="token operator">|</span>
+<span class="token operator">|</span> applications               <span class="token operator">|</span>   <span class="token number">0.10937500</span> <span class="token operator">|</span>        <span class="token number">694</span> <span class="token operator">|</span>
+<span class="token operator">|</span> auditlog                   <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>         <span class="token number">31</span> <span class="token operator">|</span>
+<span class="token operator">|</span> auditlog_details           <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span> autoreg_host               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> conditions                 <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">6</span> <span class="token operator">|</span>
+<span class="token operator">|</span> config                     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> config_autoreg_tls         <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_condition             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_condition_group       <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_condition_tag         <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_condition_tagpair     <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_condition_tagvalue    <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> corr_operation             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> correlation                <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dashboard                  <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dashboard_user             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dashboard_usrgrp           <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dbversion                  <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dchecks                    <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dhosts                     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> drules                     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> dservices                  <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> escalations                <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> event_recovery             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>         <span class="token number">46</span> <span class="token operator">|</span>
+<span class="token operator">|</span> event_suppress             <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> event_tag                  <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> events                     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">118</span> <span class="token operator">|</span>
+<span class="token operator">|</span> expressions                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">10</span> <span class="token operator">|</span>
+<span class="token operator">|</span> functions                  <span class="token operator">|</span>   <span class="token number">0.56250000</span> <span class="token operator">|</span>       <span class="token number">3841</span> <span class="token operator">|</span>
+<span class="token operator">|</span> globalmacro                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> globalvars                 <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> graph_discovery            <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">9</span> <span class="token operator">|</span>
+<span class="token operator">|</span> graph_theme                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> graphs                     <span class="token operator">|</span>   <span class="token number">0.26562500</span> <span class="token operator">|</span>        <span class="token number">750</span> <span class="token operator">|</span>
+<span class="token operator">|</span> graphs_items               <span class="token operator">|</span>   <span class="token number">0.35937500</span> <span class="token operator">|</span>       <span class="token number">2196</span> <span class="token operator">|</span>
+<span class="token operator">|</span> group_discovery            <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> group_prototype            <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>         <span class="token number">11</span> <span class="token operator">|</span>
+<span class="token operator">|</span> history                    <span class="token operator">|</span>  <span class="token number">54.59375000</span> <span class="token operator">|</span>     <span class="token number">687051</span> <span class="token operator">|</span>
+<span class="token operator">|</span> history_log                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> history_str                <span class="token operator">|</span>   <span class="token number">2.35937500</span> <span class="token operator">|</span>      <span class="token number">12495</span> <span class="token operator">|</span>
+<span class="token operator">|</span> history_text               <span class="token operator">|</span>   <span class="token number">1.28125000</span> <span class="token operator">|</span>         <span class="token number">15</span> <span class="token operator">|</span>
+<span class="token operator">|</span> history_uint               <span class="token operator">|</span> <span class="token number">351.70312500</span> <span class="token operator">|</span>    <span class="token number">4141235</span> <span class="token operator">|</span>
+<span class="token operator">|</span> host_discovery             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> host_inventory             <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> host_tag                   <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> hostmacro                  <span class="token operator">|</span>   <span class="token number">0.29687500</span> <span class="token operator">|</span>       <span class="token number">1411</span> <span class="token operator">|</span>
+<span class="token operator">|</span> hosts                      <span class="token operator">|</span>   <span class="token number">0.21875000</span> <span class="token operator">|</span>        <span class="token number">194</span> <span class="token operator">|</span>
+<span class="token operator">|</span> hosts_groups               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">190</span> <span class="token operator">|</span>
+<span class="token operator">|</span> hosts_templates            <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">138</span> <span class="token operator">|</span>
+<span class="token operator">|</span> housekeeper                <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> hstgrp                     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">16</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httpstep                   <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httpstep_field             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httpstepitem               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httptest                   <span class="token operator">|</span>   <span class="token number">0.07812500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httptest_field             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> httptestitem               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> icon_map                   <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> icon_mapping               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> ids                        <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>         <span class="token number">27</span> <span class="token operator">|</span>
+<span class="token operator">|</span> images                     <span class="token operator">|</span>   <span class="token number">1.53125000</span> <span class="token operator">|</span>        <span class="token number">138</span> <span class="token operator">|</span>
+<span class="token operator">|</span> interface                  <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span> interface_discovery        <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> interface_snmp             <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> item_application_prototype <span class="token operator">|</span>   <span class="token number">0.25000000</span> <span class="token operator">|</span>       <span class="token number">1464</span> <span class="token operator">|</span>
+<span class="token operator">|</span> item_condition             <span class="token operator">|</span>   <span class="token number">0.14062500</span> <span class="token operator">|</span>        <span class="token number">855</span> <span class="token operator">|</span>
+<span class="token operator">|</span> item_discovery             <span class="token operator">|</span>   <span class="token number">0.43750000</span> <span class="token operator">|</span>       <span class="token number">2884</span> <span class="token operator">|</span>
+<span class="token operator">|</span> item_preproc               <span class="token operator">|</span>   <span class="token number">0.87500000</span> <span class="token operator">|</span>       <span class="token number">6214</span> <span class="token operator">|</span>
+<span class="token operator">|</span> item_rtdata                <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>        <span class="token number">734</span> <span class="token operator">|</span>
+<span class="token operator">|</span> items                      <span class="token operator">|</span>   <span class="token number">6.87500000</span> <span class="token operator">|</span>       <span class="token number">6099</span> <span class="token operator">|</span>
+<span class="token operator">|</span> items_applications         <span class="token operator">|</span>   <span class="token number">0.71875000</span> <span class="token operator">|</span>       <span class="token number">4992</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_macro_path             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">99</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override               <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">50</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_condition     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">46</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_opdiscover    <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>         <span class="token number">53</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_operation     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">53</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_ophistory     <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_opinventory   <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_opperiod      <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_opseverity    <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_opstatus      <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>         <span class="token number">53</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_optag         <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_optemplate    <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> lld_override_optrends      <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> maintenance_tag            <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> maintenances               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> maintenances_groups        <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> maintenances_hosts         <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> maintenances_windows       <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> mappings                   <span class="token operator">|</span>   <span class="token number">0.18750000</span> <span class="token operator">|</span>       <span class="token number">1542</span> <span class="token operator">|</span>
+<span class="token operator">|</span> media                      <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> media_type                 <span class="token operator">|</span>   <span class="token number">0.37500000</span> <span class="token operator">|</span>         <span class="token number">21</span> <span class="token operator">|</span>
+<span class="token operator">|</span> media_type_message         <span class="token operator">|</span>   <span class="token number">0.09375000</span> <span class="token operator">|</span>        <span class="token number">139</span> <span class="token operator">|</span>
+<span class="token operator">|</span> media_type_param           <span class="token operator">|</span>   <span class="token number">0.07812500</span> <span class="token operator">|</span>        <span class="token number">510</span> <span class="token operator">|</span>
+<span class="token operator">|</span> module                     <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opcommand                  <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opcommand_grp              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opcommand_hst              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opconditions               <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> operations                 <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">10</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opgroup                    <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opinventory                <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opmessage                  <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opmessage_grp              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> opmessage_usr              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> optemplate                 <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> problem                    <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>         <span class="token number">32</span> <span class="token operator">|</span>
+<span class="token operator">|</span> problem_tag                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> profiles                   <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>        <span class="token number">111</span> <span class="token operator">|</span>
+<span class="token operator">|</span> proxy_autoreg_host         <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> proxy_dhistory             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> proxy_history              <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> regexps                    <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> rights                     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> screen_user                <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> screen_usrgrp              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> screens                    <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>         <span class="token number">67</span> <span class="token operator">|</span>
+<span class="token operator">|</span> screens_items              <span class="token operator">|</span>   <span class="token number">0.07812500</span> <span class="token operator">|</span>        <span class="token number">345</span> <span class="token operator">|</span>
+<span class="token operator">|</span> scripts                    <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>          <span class="token number">3</span> <span class="token operator">|</span>
+<span class="token operator">|</span> service_alarms             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> services                   <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> services_links             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> services_times             <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sessions                   <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> slides                     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> slideshow_user             <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> slideshow_usrgrp           <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> slideshows                 <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_element_trigger     <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_element_url         <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_shape               <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_url                 <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_user                <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmap_usrgrp              <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmaps                    <span class="token operator">|</span>   <span class="token number">0.07812500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmaps_elements           <span class="token operator">|</span>   <span class="token number">0.09375000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmaps_link_triggers      <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> sysmaps_links              <span class="token operator">|</span>   <span class="token number">0.06250000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> tag_filter                 <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task                       <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_acknowledge           <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_check_now             <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_close_problem         <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_data                  <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_remote_command        <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_remote_command_result <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> task_result                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> timeperiods                <span class="token operator">|</span>   <span class="token number">0.01562500</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> trends                     <span class="token operator">|</span>   <span class="token number">4.51562500</span> <span class="token operator">|</span>      <span class="token number">32823</span> <span class="token operator">|</span>
+<span class="token operator">|</span> trends_uint                <span class="token operator">|</span>  <span class="token number">22.54687500</span> <span class="token operator">|</span>     <span class="token number">239241</span> <span class="token operator">|</span>
+<span class="token operator">|</span> trigger_depends            <span class="token operator">|</span>   <span class="token number">0.15625000</span> <span class="token operator">|</span>        <span class="token number">771</span> <span class="token operator">|</span>
+<span class="token operator">|</span> trigger_discovery          <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>        <span class="token number">145</span> <span class="token operator">|</span>
+<span class="token operator">|</span> trigger_tag                <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">0</span> <span class="token operator">|</span>
+<span class="token operator">|</span> triggers                   <span class="token operator">|</span>   <span class="token number">1.81250000</span> <span class="token operator">|</span>       <span class="token number">2845</span> <span class="token operator">|</span>
+<span class="token operator">|</span> users                      <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span> users_groups               <span class="token operator">|</span>   <span class="token number">0.04687500</span> <span class="token operator">|</span>          <span class="token number">3</span> <span class="token operator">|</span>
+<span class="token operator">|</span> usrgrp                     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>          <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> valuemaps                  <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>        <span class="token number">159</span> <span class="token operator">|</span>
+<span class="token operator">|</span> widget                     <span class="token operator">|</span>   <span class="token number">0.03125000</span> <span class="token operator">|</span>         <span class="token number">15</span> <span class="token operator">|</span>
+<span class="token operator">|</span> widget_field               <span class="token operator">|</span>   <span class="token number">0.10937500</span> <span class="token operator">|</span>        <span class="token number">134</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------------------+--------------+------------+</span>
+<span class="token number">166</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.003</span> sec<span class="token punctuation">)</span>
+</pre><p>&#x2003;&#x2003;&#x5728;&#x4E86;&#x89E3; Zabbix &#x8CC7;&#x6599;&#x5EAB;&#x9032;&#x884C;&#x7D1B;&#x8868;&#x7684;&#x5FC5;&#x8981;&#x6027;&#x4E4B;&#x5F8C;&#xFF0C;&#x4E0B;&#x9762;&#x6703;&#x4ECB;&#x7D39;&#x5982;&#x4F55;&#x5283;&#x5206;&#x8868;&#x7684;&#x5340;&#x9593;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x5C0D; <strong>history</strong> &#x8868;&#x9032;&#x884C;&#x5340;&#x9593;&#x5283;&#x5206;&#xFF0C;&#x9019;&#x88E1;&#x5206;&#x5340;&#x7684;&#x6A19;&#x6E96;&#x662F;&#x6309;&#x5929;&#x9032;&#x884C;&#x5283;&#x5206;&#xFF0C;&#x5206;&#x5340;&#x5F8C;&#x6703;&#x63D0;&#x9AD8;&#x67E5;&#x8A62;&#x6578;&#x64DA;&#x7684;&#x6548;&#x7387;&#x3002;<strong>&#x57FA;&#x65BC;&#x67D0;&#x500B;&#x6642;&#x9593;&#x5340;&#x9593;&#xFF0C;&#x76F4;&#x63A5;&#x627E;&#x5230;&#x6578;&#x64DA;&#x6240;&#x5728;&#x7684;&#x5206;&#x5340;</strong>&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x6383;&#x63CF;&#x5168;&#x8868;&#x9032;&#x884C;&#x6578;&#x64DA;&#x5339;&#x914D;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x63A1;&#x7528;&#x4E86;&#x8868;&#x5206;&#x5340;&#xFF0C;&#x5C0D;&#x65BC;&#x904E;&#x671F;&#x6578;&#x64DA;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x900F;&#x904E; Housekeeper &#x4F86;&#x57F7;&#x884C;&#x6E05;&#x9664;&#x3002;&#x53EF;&#x4EE5;&#x5728; Web &#x4E2D;&#xFF0C;&#x627E;&#x5230; Administration =&gt; General =&gt; Housekeeper&#xFF0C;&#x53BB;&#x9664; History &#x548C; trends &#x7684;&#x52FE;&#x9078;&#x72C0;&#x614B;&#x3002;</p>
+<p><img src="images\14.png" alt></p>
+<h3 class="mume-header" id="392-mysql-%E8%A1%A8%E5%88%86%E5%8D%80%E5%AF%A6%E4%BD%9C">3.9.2 MySQL &#x8868;&#x5206;&#x5340;&#x5BE6;&#x4F5C;</h3>
+
+<p>&#x2003;&#x2003;1. &#x8868;&#x5206;&#x5340;&#x8173;&#x672C;&#x4EE3;&#x78BC;:</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
