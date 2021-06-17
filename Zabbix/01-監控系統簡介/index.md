@@ -1,3 +1,29 @@
+---
+export_on_save:
+  html: true
+---
+
+@import "..\..\Packages\bootstrap-5.0.1-dist\css\bootstrap.min.css"
+@import "..\..\Packages\bootstrap-5.0.1-dist\js\bootstrap.min.js"
+@import "..\..\Packages\fontawesome-free-5.15.3-web\css\all.css"
+@import "..\..\Packages\fontawesome-free-5.15.3-web\js\all.js"
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://knarf0506.github.io/"><i class="fas fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 # 監控系統簡介
 
 [TOC]
@@ -51,8 +77,8 @@
 &emsp;&emsp;(1) 本地：使用本地磁碟，基於文件方式存儲。
 &emsp;&emsp;(2) 時序資料庫：如環狀資料庫 (Round Robin Database, RDB)，OpenTSDB、Graphite、InfluxDB、Promethus，比起用文件存儲，時序存儲更加高效。
 &emsp;&emsp;(3) 資料庫管理系統 (Database Management System, DBMS)：常見 MySQL、Oracle、SQL Server，缺點是到達一定量會**降低讀/寫速度**。優化方法有三種，一是減少數據量；二是優化資料庫本身，調整配置參數，優化環境；三是使用分散式資料庫和資料庫集群技術方案。
-&emsp;&emsp;(4) NoSQL：相較於 DBMS，單機的 QPS 通常較高，但本身不是為了監控系統設計，在數據結構存儲方面存在缺陷，故使用NoSQL作為存儲較少。
-&emsp;&emsp;(5) 列存資料庫：設計初衷為大數據所用，但由於部署、維運較為複雜，故一般監控系統也不會採用，這方便資料庫代表為HBase。
+&emsp;&emsp;(4) NoSQL：相較於 DBMS，單機的 QPS 通常較高，但本身不是為了監控系統設計，在數據結構存儲方面存在缺陷，故使用 NoSQL作為存儲較少。
+&emsp;&emsp;(5) 列存資料庫：設計初衷為大數據所用，但由於部署、維運較為複雜，故一般監控系統也不會採用，這方便資料庫代表為 HBase。
 &emsp;&emsp;(6) 全文搜索引擎資料庫：代表為 Elasticsearch，作為監控數據存儲有天然優勢，支持集群、分散式佈署、容災，並且集群能夠提供較高的性能。目前採用 Elasticsearch 代表作為 Elastic Stack，在 Zabbix 這方面 4.0 版本後也可以做存儲。
 
 ### 1.2.7 告警功能
@@ -110,3 +136,10 @@
 ### 1.3.8 Zabbix
 
 &emsp;&emsp;Zabbix 是企業級分散式監控系統，支援多種收集數據方式，有專用的 Agent (代理)，也支持 SNMP、IPMI、JMX、Telnet、SSH 等多種協議，他將收集到的數據存放到資料庫中，可以支持 MySQL、Oracle、PostgreSQL、SQLite、Elasticsearch。達到條件觸發告警，並支持對告警數據的分析統計。
+
+
+
+<div>
+    <a style="float:left" href=../index.html>上一頁</a>
+    <a style="float:right" href=../02-Zabbix%20簡介/index.html 簡介>下一頁</a>
+<div>

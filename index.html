@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
       
       
       
@@ -261,12 +261,34 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="knarf0506s-blog">knarf0506&apos;s Blog</h1>
-
-<ul>
-<li><a href="Ansible/index.html">Ansible</a></li>
-<li><a href="Zabbix/index.html">Zabbix</a></li>
-</ul>
+      <link rel="stylesheet" href="Packages\bootstrap-5.0.1-dist\css\bootstrap.min.css">
+<script type="text/javascript" src="Packages\bootstrap-5.0.1-dist\js\bootstrap.min.js"></script>
+<link rel="stylesheet" href="Packages\fontawesome-free-5.15.3-web\css\all.css">
+<script type="text/javascript" src="Packages\fontawesome-free-5.15.3-web\js\all.js"></script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://knarf0506.github.io/"><i class="fas fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Ansible\index.html">
+            <img class src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDMyIiBoZWlnaHQ9IjI1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiIHZpZXdCb3g9IjAgMCAyNTYgMzE1Ij48cGF0aCBmaWxsPSIjMUExOTE4IiBkPSJNNjcuNTE3IDMxMy44NjRjLS41NDIgMC0xLjEyNi0uMTM3LTEuNTMyLS42ODZMNDguNiAyOTAuMzE2djIzLjMyaC0zLjk2NFYyODQuOTJjMC0xLjE0My45NDYtMi4wNTcgMi4wMjgtMi4wNTcuNjMgMCAxLjE3LjE4MiAxLjU3NS43MzFsMTcuMzQgMjIuODE2di0yMy4yMjdoMy45NjN2MjguNjY4YzAgMS4xODktLjk0NiAyLjAxMi0yLjAyNiAyLjAxMk0xMDAuMzA2IDMxNC4xMzhjLTMuOTYyIDAtOC4xMDctLjgyNC0xMS45OC0yLjI4NmwuOTQ2LTMuMjkzYzMuNTU4IDEuMTQ0IDcuNDMxIDEuOTY3IDExLjAzNCAxLjk2NyA1IDAgNy42MTItMS43ODQgNy42MTItNC4yOTggMC0yLjI4Ni0yLjAyOC0zLjQzLTkuMDA4LTYuNzIyLTYuOTgxLTMuMjkyLTkuNzI3LTUuMzk0LTkuNzI3LTkuNTEgMC01LjE2NiAzLjk2Mi03LjI3IDExLjQzOC03LjI3IDMuMTA4IDAgNy44ODIuNjQgMTAuNjMgMS40NjRsLS42MyAzLjM4M2MtMy4wMi0uNzMxLTYuODAxLTEuMjM0LTkuOTEtMS4yMzQtNS4yNjggMC03LjQzIDEuMDA1LTcuNDMgMy41MiAwIDIuNDY5IDEuNTc1IDMuNTIgOC45NjIgNi45NSA3Ljc5MiAzLjYxMiA5Ljc3MyA1LjQ0MSA5Ljc3MyA5LjE5IDAgNS40NDItNS4xMzUgOC4xMzktMTEuNzEgOC4xMzlNMTMwLjc5OCAyODMuMTg0aDQuMDk4djMwLjQ1aC00LjA5OHYtMzAuNDV6TTE2OS43NTggMjk5LjgyN2gtMTAuMTh2MTAuMzM0aDEwLjE4YzMuNDY3IDAgNS41ODQtMi4xOTUgNS41ODQtNS4yNiAwLTIuODgtMi4yMDYtNS4wNzQtNS41ODQtNS4wNzRtLTEuOTgzLTEzLjE2OWgtOC4xOTd2OS43NGg4LjE5N2MzLjI4OCAwIDUuNjc1LTIuMTA0IDUuNjc1LTUuMDMgMC0yLjg4LTIuMDcyLTQuNzEtNS42NzUtNC43MW0yLjAyOCAyNi45NzdoLTEyLjI1YTIuMDQ0IDIuMDQ0IDAgMDEtMi4wNzMtMi4wNTdWMjg1LjI0YzAtMS4wOTguOTAxLTIuMDU3IDIuMDczLTIuMDU3aDEwLjEzM2M2LjIxNSAwIDkuOTA4IDMuMDYzIDkuOTA4IDcuODY0IDAgMi42MDYtMS41MzIgNS4wMy0zLjg3NCA2LjQ0NyAzLjQ3IDEuMDUyIDUuODEgMy45MzIgNS44MSA3LjQwNyAwIDQuODQ2LTQuMDA4IDguNzMzLTkuNzI3IDguNzMzTTE5OS4yMTIgMzEzLjYzNWMtMS4xMjQgMC0yLjAyNS0uOTYtMi4wMjUtMi4wNTd2LTI4LjM5NGg0LjA5N3YyNi43NDhoMTYuMzA0djMuNzAzaC0xOC4zNzZ6TTI0NS41MjYgMzE0LjEzOGMtOC4zNzcgMC0xMy40MjEtMy4xMDktMTMuNDIxLTkuMzczIDAtMi45NzIgMS42NjctNS44MDcgNC45MS03LjEzMy0yLjYxMy0xLjY0Ni0zLjk2NC0zLjk3OC0zLjk2NC02LjUzOCAwLTUuNjcgNC4zNy04LjM2OCAxMi41NjYtOC4zNjggMi43NDggMCA2LjYyLjMyIDkuODY0IDEuMDUybC0uNDUxIDMuMzgzYy0zLjQyMi0uNTQ5LTYuNjIxLS44NjgtOS43MjktLjg2OC01LjMxNCAwLTguMTUyIDEuNDYzLTguMTUyIDQuOTg0IDAgMi43OSAyLjYxMyA0Ljk4NCA2LjA4MSA0Ljk4NGg3LjAyNWMuOTkxIDAgMS43NTcuNzc3IDEuNzU3IDEuNzM3IDAgMS4wMDYtLjc2NiAxLjc4My0xLjc1NyAxLjc4M2gtNy41NjVjLTMuOTY0IDAtNi40ODUgMS45NjUtNi40ODUgNC45ODQgMCA0LjQzNSA0LjA5OCA1Ljc2IDkuMjMyIDUuNzYgMi43OTMgMCA2LjU3NS0uMzY0IDkuNjM3LTEuMDk2bC41ODcgMy4zMzdjLTIuOTI4LjgyNC02Ljc1NyAxLjM3Mi0xMC4xMzUgMS4zNzJNMTQuMTM4IDI4OC44OTVsNy4xNzggMTcuOTg0LTEwLjg0LTguNjcgMy42NjItOS4zMTR6bTEyLjc1MSAyMi4xMjdsLTExLjA0LTI2Ljk3NGMtLjMxNC0uNzc4LS45NDUtMS4xOS0xLjcxMS0xLjE5YTEuODQgMS44NCAwIDAwLTEuNzU2IDEuMTlMLjI2NCAzMTMuNjM1aDQuMTQ0bDQuNzk4LTEyLjE5OCAxNC4zMTQgMTEuNzRjLjU3Ni40NzMuOTkxLjY4NiAxLjUzMi42ODYgMS4wOCAwIDIuMDI3LS44MjIgMi4wMjctMi4wMSAwLS4xOTQtLjA2OC0uNS0uMTktLjgzek0yNTUuODc5IDEyNy44NjhjMCA3MC40NTUtNTcuMTEgMTI3LjU2NS0xMjcuNTY3IDEyNy41NjUtNzAuNDUgMC0xMjcuNTY2LTU3LjExLTEyNy41NjYtMTI3LjU2NUMuNzQ2IDU3LjQxOCA1Ny44NjIuMzAyIDEyOC4zMTIuMzAyYzcwLjQ1NiAwIDEyNy41NjcgNTcuMTE2IDEyNy41NjcgMTI3LjU2NiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xMzAuNDYgNzguMjI5bDMzLjAxMSA4MS40NzYtNDkuODYzLTM5LjI3OEwxMzAuNDYgNzguMjN6bTU4LjY0NCAxMDAuMjQ1TDEzOC4zMjYgNTYuMjcyYy0xLjQ1LTMuNTI0LTQuMzQ4LTUuMzktNy44NjYtNS4zOS0zLjUyNSAwLTYuNjM0IDEuODY2LTguMDg0IDUuMzlsLTU1LjczMiAxMzQuMDRoMTkuMDY1bDIyLjA2Mi01NS4yNjUgNjUuODQgNTMuMTljMi42NDcgMi4xNDEgNC41NTggMy4xMSA3LjA0MSAzLjExIDQuOTc0IDAgOS4zMjItMy43MyA5LjMyMi05LjExMSAwLS44NzYtLjMxLTIuMjY3LS44Ny0zLjc2MnoiLz48L3N2Zz4=" height="20" width="20">
+            Ansible
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Zabbix\index.html">
+            <img class src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTAgMGg2NHY2NEgweiIgZmlsbD0iI2QzMWYyNiIvPjxwYXRoIGQ9Ik0xOC44IDE1LjM4MmgyNi4zOTN2My40MjRsLTIxLjI0IDI2LjAyN2gyMS43NDR2My43ODRIMTguMjkzdi0zLjQzbDIxLjI0LTI2LjAySDE4Ljh6IiBmaWxsPSIjZmZmIi8+PC9zdmc+" height="17" width="17">
+            Zabbix
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
       </div>
       
